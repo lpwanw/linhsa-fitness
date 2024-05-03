@@ -24,5 +24,5 @@ ActiveRecordDoctor.configure do
            enabled: false
 
   detector :missing_presence_validation,
-            ignore_attributes: ["User.encrypted_password"]
+           ignore_attributes: ["User.encrypted_password"]
 end
