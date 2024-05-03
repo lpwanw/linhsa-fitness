@@ -5,6 +5,7 @@ source "https://rubygems.org"
 ruby "3.2.2"
 
 gem "bootsnap", require: false
+gem "devise"
 gem "dotenv"
 gem "importmap-rails"
 gem "jbuilder"
@@ -23,6 +24,7 @@ group :development, :test do
   gem "bullet"
   gem "debug", platforms: %i[ mri windows ]
   gem "factory_bot_rails"
+  gem "ffaker"
   gem "rspec-rails"
 end
 
@@ -43,5 +45,6 @@ group :test do
   gem "capybara"
   gem "database_cleaner-active_record"
   gem "selenium-webdriver"
+  gem "shoulda-matchers"
   gem "simplecov", require: false
 end

@@ -19,4 +19,10 @@ ActiveRecordDoctor.configure do
     "ActiveStorage::Attachment",
     "ActionMailbox::InboundEmail",
   ]
+
+  detector :short_primary_key_type,
+           enabled: false
+
+  detector :missing_presence_validation,
+           ignore_attributes: ["User.encrypted_password"]
 end
