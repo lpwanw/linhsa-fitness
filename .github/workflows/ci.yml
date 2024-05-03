@@ -27,6 +27,8 @@ jobs:
         run: bin/rails db:create db:migrate
       - name: Run tests
         run: bundle exec rspec
+      - name: Run active record doctor
+        run: bundle exec active_record_doctor
   lint:
     runs-on: ubuntu-latest
     env:
