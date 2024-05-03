@@ -1,0 +1,9 @@
+inherit_from: .rubocop_todo.yml
+
+require:
+  - rubocop-capybara
+  - rubocop-rails
+
+AllCops:
+  SuggestExtensions: true
+  NewCops: enable
