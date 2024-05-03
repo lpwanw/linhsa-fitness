@@ -10,4 +10,13 @@ ActiveRecordDoctor.configure do
     "active_storage_attachments",
     "action_text_rich_texts",
   ]
+
+  global :ignore_models, [
+    "ActionText::RichText",
+    "ActionText::EncryptedRichText",
+    "ActiveStorage::VariantRecord",
+    "ActiveStorage::Blob",
+    "ActiveStorage::Attachment",
+    "ActionMailbox::InboundEmail",
+  ]
 end

@@ -19,6 +19,7 @@ gem "turbo-rails"
 gem "tzinfo-data", platforms: %i[ windows jruby ]
 
 group :development, :test do
+  gem "active_record_doctor"
   gem "bullet"
   gem "debug", platforms: %i[ mri windows ]
   gem "factory_bot_rails"
@@ -26,7 +27,9 @@ group :development, :test do
 end
 
 group :development do
-  gem "active_record_doctor"
+  gem "brakeman"
+  gem "bundler-audit"
+  gem "rails_best_practices"
   gem "rubocop"
   gem "rubocop-capybara"
   gem "rubocop-factory_bot"
