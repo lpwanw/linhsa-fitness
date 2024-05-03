@@ -19,12 +19,14 @@ gem "turbo-rails"
 gem "tzinfo-data", platforms: %i[ windows jruby ]
 
 group :development, :test do
+  gem "bullet"
   gem "debug", platforms: %i[ mri windows ]
   gem "factory_bot_rails"
   gem "rspec-rails"
 end
 
 group :development do
+  gem "active_record_doctor"
   gem "rubocop"
   gem "rubocop-capybara"
   gem "rubocop-factory_bot"

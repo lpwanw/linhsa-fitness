@@ -12,3 +12,6 @@ AllCops:
 
 RSpecRails/InferredSpecType:
   Enabled: false
+
+Style/TrailingCommaInArrayLiteral:
+  EnforcedStyleForMultiline: consistent_comma

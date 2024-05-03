@@ -44,6 +44,8 @@ Layout/SpaceInsidePercentLiteralDelimiters:
 # AllowedMethods: refine
 Metrics/BlockLength:
   Max: 26
+  Exclude:
+    - "config/*/**.rb"
 
 # Offense count: 1
 # Configuration parameters: AllowedMethods, AllowedPatterns.
@@ -122,7 +124,8 @@ Style/SpecialGlobalVars:
 # Configuration parameters: EnforcedStyle, ConsistentQuotesInMultiline.
 # SupportedStyles: single_quotes, double_quotes
 Style/StringLiterals:
-  Enabled: false
+  Enabled: true
+  EnforcedStyle: double_quotes
 
 # Offense count: 1
 # This cop supports safe autocorrection (--autocorrect).
