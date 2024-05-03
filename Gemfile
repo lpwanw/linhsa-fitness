@@ -27,6 +27,8 @@ group :development, :test do
 end
 
 group :development do
+  gem "brakeman"
+  gem "rails_best_practices"
   gem "rubocop"
   gem "rubocop-capybara"
   gem "rubocop-factory_bot"
@@ -34,6 +36,7 @@ group :development do
   gem "rubocop-rspec"
   gem "rubocop-rspec_rails"
   gem "web-console"
+  gem "bundler-audit"
 end
 
 group :test do
