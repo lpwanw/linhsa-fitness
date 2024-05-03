@@ -3,7 +3,12 @@ inherit_from: .rubocop_todo.yml
 require:
   - rubocop-capybara
   - rubocop-rails
+  - rubocop-rspec_rails
+  - rubocop-factory_bot
 
 AllCops:
   SuggestExtensions: true
   NewCops: enable
+
+RSpecRails/InferredSpecType:
+  Enabled: false
