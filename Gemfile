@@ -20,7 +20,6 @@ gem "turbo-rails"
 gem "tzinfo-data", platforms: %i[ windows jruby ]
 gem "view_component"
 
-
 group :development, :test do
   gem "active_record_doctor"
   gem "bullet"
