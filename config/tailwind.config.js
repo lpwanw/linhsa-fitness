@@ -6,6 +6,7 @@ module.exports = {
     "./app/helpers/**/*.rb",
     "./app/javascript/**/*.js",
     "./app/views/**/*.{erb,haml,html,slim}",
+    "./app/components/**/*.{erb,haml,html,slim}",
   ],
   safelist: [
     "w-64",
@@ -27,12 +28,6 @@ module.exports = {
       md: "768px",
       lg: "976px",
       xl: "1440px",
-    },
-    colors: {
-      gray: colors.coolGray,
-      blue: colors.lightBlue,
-      red: colors.rose,
-      pink: colors.fuchsia,
     },
     fontFamily: {
       sans: ["Graphik", "sans-serif"],
