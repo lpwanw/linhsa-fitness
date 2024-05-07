@@ -8,4 +8,6 @@ class Profile < ApplicationRecord
 
   validates :dob, presence: true
   validates :dob, comparison: { less_than: Time.current.to_date }
+
+  delegate :email, to: :user, prefix: true
 end
