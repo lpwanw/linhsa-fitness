@@ -7,4 +7,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_one :profile, dependent: :delete
+
+  delegate :name, :dob, :avatar, to: :profile, prefix: true, allow_nil: true
 end
