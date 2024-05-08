@@ -25,4 +25,7 @@ ActiveRecordDoctor.configure do
 
   detector :missing_presence_validation,
            ignore_attributes: ["User.encrypted_password"]
+
+  detector :mismatched_foreign_key_type,
+           ignore_columns: ["active_storage_variant_records.blob_id"]
 end

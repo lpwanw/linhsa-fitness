@@ -10,4 +10,6 @@ class Profile < ApplicationRecord
   validates :dob, comparison: { less_than: Time.current.to_date }
 
   delegate :email, to: :user, prefix: true
+
+  has_one_attached :avatar
 end
