@@ -2,6 +2,6 @@
 
 module UserHelper
   def avatar_for(user)
-    user.profile_avatar&.attached? ? user.profile_avatar : "default_avatar.png"
+    user.profile&.persisted? && user.profile_avatar&.attached? ? user.profile_avatar : "default_avatar.png"
   end
 end
