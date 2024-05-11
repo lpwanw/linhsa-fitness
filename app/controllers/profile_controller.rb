@@ -12,6 +12,7 @@ class ProfileController < ApplicationController
     if @profile.update(profile_params)
       redirect_to profile_path, notice: I18n.t("Profile updated successfully"), status: :see_other
     else
+      flash[:error] = I18n.t("Failed to update profile")
       render :show, status: :unprocessable_entity
     end
   end
