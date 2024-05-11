@@ -33,6 +33,7 @@ end
 group :development do
   gem "brakeman"
   gem "bundler-audit"
+  gem "pry"
   gem "rails_best_practices"
   gem "rubocop"
   gem "rubocop-capybara"
