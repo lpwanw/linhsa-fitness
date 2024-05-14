@@ -6,7 +6,7 @@ RSpec.describe BoardsController, type: :controller do
   subject { patch :update, params: { id: board.id, board: board_attributes } }
 
   let!(:user) { create(:user) }
-  let!(:board) { create(:board, user: user) }
+  let!(:board) { create(:board, user:) }
   let(:board_attributes) { attributes_for(:board) }
 
   describe "PATCH update" do
