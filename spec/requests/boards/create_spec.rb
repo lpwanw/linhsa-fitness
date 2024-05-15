@@ -30,6 +30,19 @@ RSpec.describe BoardsController, type: :controller do
           expect(response).to redirect_to board_url(Board.last)
         end
       end
+
+      context "when board is invalid" do
+        let(:board_attributes) { { title: "" } }
+
+        it "does not create a new board" do
+          expect { post :create, params: { board: board_attributes } }.not_to change(Board, :count)
+        end
+
+        it "renders new template" do
+          post :create, params: { board: board_attributes }
+          expect(response).to render_template :new
+        end
+      end
     end
   end
 end
