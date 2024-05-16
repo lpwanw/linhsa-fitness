@@ -1,8 +1,7 @@
 # frozen_string_literal: true
 
-class List < ApplicationRecord
-  belongs_to :board
-  has_many :cards, dependent: :delete_all
+class Card < ApplicationRecord
+  belongs_to :list
 
   validates :title, presence: true
   validates :title, length: { minimum: 20, maximum: 255 }
