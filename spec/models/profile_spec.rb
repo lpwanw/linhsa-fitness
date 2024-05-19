@@ -18,6 +18,6 @@ RSpec.describe Profile, type: :model do
 
     it { is_expected.to validate_presence_of(:locale) }
     it { is_expected.to validate_length_of(:locale).is_equal_to(2) }
-    it { is_expected.to validate_inclusion_of(:locale).in_array(["en", "vi"]) }
+    it { is_expected.to validate_inclusion_of(:locale).in_array(%w[en vi]) }
   end
 end
