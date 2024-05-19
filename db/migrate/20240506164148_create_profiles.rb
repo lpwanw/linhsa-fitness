@@ -6,6 +6,7 @@ class CreateProfiles < ActiveRecord::Migration[7.1]
       t.references :user, null: false, foreign_key: true, index: { unique: true }
       t.string :name, null: false, limit: 100
       t.date :dob, null: false
+      t.string :locale, null: false, default: "en", limit: 2
 
       t.timestamps
     end

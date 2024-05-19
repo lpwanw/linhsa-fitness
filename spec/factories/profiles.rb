@@ -9,5 +9,7 @@ FactoryBot.define do
       Rack::Test::UploadedFile.new Rails.root.join("spec/factories/default_avatar.png"),
                                    "image/png"
     end
+
+    locale { "en" }
   end
 end

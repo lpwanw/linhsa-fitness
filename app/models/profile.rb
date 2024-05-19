@@ -9,6 +9,10 @@ class Profile < ApplicationRecord
   validates :dob, presence: true
   validates :dob, comparison: { less_than: Time.current.to_date }
 
+  validates :locale, presence: true
+  validates :locale, length: { is: 2 }
+  validates :locale, inclusion: { in: I18n.available_locales.map(&:to_s) }
+
   delegate :email, to: :user, prefix: true
 
   has_one_attached :avatar
