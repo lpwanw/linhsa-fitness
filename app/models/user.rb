@@ -10,4 +10,5 @@ class User < ApplicationRecord
   has_many :boards, dependent: :destroy
 
   delegate :name, :dob, :avatar, to: :profile, prefix: true, allow_nil: true
+  delegate :locale, to: :profile, prefix: false, allow_nil: true
 end
