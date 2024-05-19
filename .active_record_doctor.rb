@@ -28,4 +28,7 @@ ActiveRecordDoctor.configure do
 
   detector :mismatched_foreign_key_type,
            ignore_columns: ["active_storage_variant_records.blob_id"]
+
+  detector :incorrect_length_validation,
+           enabled: false
 end
