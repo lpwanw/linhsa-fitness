@@ -1,0 +1,11 @@
+---
+vi:
+  navbar:
+    boards: Bảng
+    home: Trang chủ
+    logout: Đăng xuất
+    new_board: Bảng mới
+    open_main_menu: Mở menu
+    open_user_menu: Mở menu người dùng
+    page_title: Love Loan
+    settings: Cài đặt
