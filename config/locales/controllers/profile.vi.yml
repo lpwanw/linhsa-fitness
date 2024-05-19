@@ -1,0 +1,6 @@
+---
+vi:
+  profile:
+    update:
+      failure: Hồ sơ chưa được cập nhật.
+      success: Hồ sơ đã được cập nhật thành công.

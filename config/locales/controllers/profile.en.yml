@@ -1,0 +1,6 @@
+---
+en:
+  profile:
+    update:
+      failure: Profile was not updated.
+      success: Profile was successfully updated.
