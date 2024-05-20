@@ -142,7 +142,8 @@ search:
 
 ## Consider these keys used:
 ignore_unused:
-  # - 'activerecord.attributes.*'
+  - "activerecord.attributes.*"
+  - "activerecord.models.*"
   - "{devise,kaminari,will_paginate,errors.messages}.*"
 # - 'simple_form.{yes,no}'
 # - 'simple_form.{placeholders,hints,labels}.*'
