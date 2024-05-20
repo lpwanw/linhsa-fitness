@@ -1,6 +1,10 @@
 ---
 en:
   profile:
+    show:
+      detail: Personal details and application.
+      heading: User Information
+      submit: Update Profile
     update:
       failure: Profile was not updated.
       success: Profile was successfully updated.
