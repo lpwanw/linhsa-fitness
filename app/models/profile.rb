@@ -3,7 +3,7 @@
 class Profile < ApplicationRecord
   belongs_to :user
 
-  validates :name, length: { maximum: 100 }
+  validates :name, length: { maximum: 50 }
 
   validates :dob, comparison: { less_than: Time.current.to_date }
 

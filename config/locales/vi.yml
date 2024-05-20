@@ -106,7 +106,7 @@ vi:
       too_long: quá dài (tối đa %{count} ký tự)
       too_short: quá ngắn (tối thiểu %{count} ký tự)
       wrong_length: độ dài không đúng (phải là %{count} ký tự)
-      required: "phải có"
+      required: phải có
     template:
       body: "Có lỗi với các mục sau:"
       header: "%{count} lỗi ngăn không cho lưu %{model} này"

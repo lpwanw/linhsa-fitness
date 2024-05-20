@@ -10,7 +10,7 @@ RSpec.describe Profile, type: :model do
   describe "validations" do
     subject { build(:profile) }
 
-    it { is_expected.to validate_length_of(:name).is_at_most(100) }
+    it { is_expected.to validate_length_of(:name).is_at_most(50) }
 
     it { expect(subject.avatar).to be_an_instance_of(ActiveStorage::Attached::One) }
 
