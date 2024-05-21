@@ -26,7 +26,7 @@ class BoardsController < ApplicationController
 
     respond_to do |format|
       if @board.save
-        format.html { redirect_to board_url(@board), notice: I18n.t("Board was successfully created.") }
+        format.html { redirect_to board_url(@board), notice: I18n.t("boards.create.success") }
         format.json { render :show, status: :created, location: @board }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -39,7 +39,7 @@ class BoardsController < ApplicationController
   def update
     respond_to do |format|
       if @board.update(board_params)
-        format.html { redirect_to board_url(@board), notice: I18n.t("Board was successfully updated.") }
+        format.html { redirect_to board_url(@board), notice: I18n.t("boards.update.success") }
         format.json { render :show, status: :ok, location: @board }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -53,7 +53,7 @@ class BoardsController < ApplicationController
     @board.destroy!
 
     respond_to do |format|
-      format.html { redirect_to boards_url, notice: I18n.t("Board was successfully destroyed.") }
+      format.html { redirect_to boards_url, notice: I18n.t("boards.destroy.success") }
       format.json { head :no_content }
     end
   end
@@ -67,8 +67,8 @@ class BoardsController < ApplicationController
 
     respond_to do |format|
       format.html do
-        flash[:error] = I18n.t("Board not found.")
-        redirect_to boards_url, error: I18n.t("Board not found.")
+        flash[:error] = I18n.t("boards.not_found")
+        redirect_to boards_url
       end
       format.json { head :not_found }
     end

@@ -1,0 +1,10 @@
+---
+en:
+  activerecord:
+    attributes:
+      profile:
+        dob: Date of birth
+        locale: Language
+        name: Name
+    models:
+      profile: Profile
