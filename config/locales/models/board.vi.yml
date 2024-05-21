@@ -1,0 +1,8 @@
+---
+vi:
+  activerecord:
+    attributes:
+      board:
+        title: Tiêu đề
+    models:
+      board: Bảng
