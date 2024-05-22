@@ -6,7 +6,7 @@ en:
     destroy:
       success: Board was successfully destroyed.
     not_found: Board not found.
-    update:
-      success: Board was successfully updated.
     show:
       new_list: New list
+    update:
+      success: Board was successfully updated.
