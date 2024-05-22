@@ -8,3 +8,5 @@ en:
     not_found: Board not found.
     update:
       success: Board was successfully updated.
+    show:
+      new_list: New list
