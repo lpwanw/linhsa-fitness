@@ -11,12 +11,12 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body>
+  <body class="h-svh flex flex-col">
     <%= render "shared/flash_container" %>
 
     <%= render Navbar.new %>
 
-    <main class="container mx-auto mt-28 px-5 flex">
+    <main class="grow ml-2 flex flex-col">
       <%= yield %>
     </main>
   </body>
