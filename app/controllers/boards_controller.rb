@@ -10,7 +10,9 @@ class BoardsController < ApplicationController
   end
 
   # GET /boards/1 or /boards/1.json
-  def show; end
+  def show
+    @lists = @board.lists.includes(:cards)
+  end
 
   # GET /boards/new
   def new
