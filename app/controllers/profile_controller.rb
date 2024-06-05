@@ -10,9 +10,9 @@ class ProfileController < ApplicationController
   def update
     @profile = current_user.profile || current_user.build_profile
     if @profile.update(profile_params)
-      redirect_to profile_path, notice: I18n.t("Profile updated successfully"), status: :see_other
+      redirect_to profile_path, notice: I18n.t("profile.update.success"), status: :see_other
     else
-      flash[:error] = I18n.t("Failed to update profile")
+      flash[:error] = I18n.t("profile.update.failure")
       render :show, status: :unprocessable_entity
     end
   end
@@ -20,6 +20,6 @@ class ProfileController < ApplicationController
   private
 
   def profile_params
-    params.require(:profile).permit(:name, :dob, :avatar)
+    params.require(:profile).permit(:name, :dob, :avatar, :locale)
   end
 end

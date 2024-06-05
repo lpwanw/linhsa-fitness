@@ -2,10 +2,10 @@
 
 require "rails_helper"
 
-RSpec.describe Board, type: :model do
+RSpec.describe List, type: :model do
   describe "associations" do
-    it { should belong_to(:user) }
-    it { should have_many(:lists).dependent(:destroy) }
+    it { should belong_to(:board) }
+    it { should have_many(:cards).dependent(:delete_all) }
   end
 
   describe "validations" do

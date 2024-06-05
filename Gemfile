@@ -27,6 +27,7 @@ group :development, :test do
   gem "debug", platforms: %i[ mri windows ]
   gem "factory_bot_rails"
   gem "ffaker"
+  gem "i18n-tasks"
   gem "rspec-rails"
 end
 

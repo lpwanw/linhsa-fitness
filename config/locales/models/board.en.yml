@@ -1,0 +1,8 @@
+---
+en:
+  activerecord:
+    attributes:
+      board:
+        title: Title
+    models:
+      board: Board
