@@ -1,0 +1,12 @@
+---
+vi:
+  boards:
+    create:
+      success: Bảng đã được tạo thành công.
+    destroy:
+      success: Bảng đã được xóa thành công.
+    not_found: Không tìm thấy bảng.
+    show:
+      new_list: Danh sách mới
+    update:
+      success: Bảng đã được cập nhật thành công.

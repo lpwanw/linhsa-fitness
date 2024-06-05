@@ -1,0 +1,10 @@
+---
+vi:
+  activerecord:
+    attributes:
+      profile:
+        dob: Ngày sinh
+        locale: Ngôn ngữ
+        name: Tên
+    models:
+      profile: Hồ sơ
