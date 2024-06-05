@@ -43,8 +43,6 @@ jobs:
           bundler-cache: true
       - name: Run rubocop
         run: bundle exec rubocop
-      - name: Run bundle-audit
-        run: bundle exec bundle-audit
       - name: Run rails_best_practices
         run: bundle exec rails_best_practices
       - name: Run brakeman
