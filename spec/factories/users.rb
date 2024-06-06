@@ -5,6 +5,7 @@ FactoryBot.define do
     email { FFaker::Internet.unique.email }
     password { "password" }
     password_confirmation { "password" }
+    confirmed_at { Time.zone.now }
 
     trait :with_profile do
       after(:create) do |user|
