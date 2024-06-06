@@ -34,6 +34,8 @@ end
 group :development do
   gem "brakeman"
   gem "bundler-audit"
+  gem "letter_opener"
+  gem "letter_opener_web"
   gem "pry"
   gem "rails_best_practices"
   gem "rubocop"
