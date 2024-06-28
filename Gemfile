@@ -7,7 +7,7 @@ ruby "3.2.2"
 gem "bootsnap", require: false
 gem "devise"
 gem "dotenv"
-gem "image_processing"
+# gem "image_processing"
 gem "importmap-rails"
 gem "inline_svg"
 gem "jbuilder"
