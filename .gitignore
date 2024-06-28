@@ -41,3 +41,9 @@
 
 .DS_Store
 .idea
+
+# workaround to enable tailwind css intellicence in RubyMine
+package-lock.json
+package.json
+tailwind.config.js
+node_modules/
