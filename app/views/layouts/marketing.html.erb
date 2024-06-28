@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>SelfHostTaskManagerment</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+  <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
+  <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+  <%= javascript_importmap_tags %>
+</head>
+<body class="bg-zinc-950 text-white">
+<%= render "shared/flash_container" %>
+<header class="flex justify-between items-center fixed top-2 inset-x-0 w-full px-8 z-50">
+  <%= link_to root_path, class: "basis-2/12" do %>
+    <%= inline_svg_tag "logo.svg", class: "w-16 h-16" %>
+  <% end %>
+
+  <nav class="relative rounded-full border bg-zinc-950 border-white/[0.2] shadow-input flex justify-center space-x-4 px-8 py-6">
+    <%= render Dropdown::Hover.new(name: "Câu Lạc Bộ") do %>
+      <div class="bg-zinc-950 backdrop-blur-sm rounded-2xl overflow-hidden border border-white/[0.2] shadow-xl" role="none">
+        <a href="#" class="cursor-pointer block px-4 py-2 text-sm text-white whitespace-nowrap" role="menuitem" tabindex="-1" id="menu-item-0">Account settings</a>
+        <a href="#" class="cursor-pointer block px-4 py-2 text-sm text-white" role="menuitem" tabindex="-1" id="menu-item-1">Support</a>
+        <a href="#" class="cursor-pointer block px-4 py-2 text-sm text-white" role="menuitem" tabindex="-1" id="menu-item-2">License</a>
+      </div>
+    <% end %>
+    <%= render Dropdown::Hover.new(name: "Lịch Tập") do %>
+      <div class="bg-zinc-950 backdrop-blur-sm rounded-2xl overflow-hidden border border-white/[0.2] shadow-xl" role="none">
+        <a href="#" class="cursor-pointer block px-4 py-2 text-sm text-white whitespace-nowrap" role="menuitem" tabindex="-1" id="menu-item-0">Account settings</a>
+        <a href="#" class="cursor-pointer block px-4 py-2 text-sm text-white" role="menuitem" tabindex="-1" id="menu-item-1">Support</a>
+        <a href="#" class="cursor-pointer block px-4 py-2 text-sm text-white" role="menuitem" tabindex="-1" id="menu-item-2">License</a>
+      </div>
+    <% end %>
+    <%= render Dropdown::Hover.new(name: "Bộ Môn") do %>
+      <div class="bg-zinc-950 backdrop-blur-sm rounded-2xl overflow-hidden border border-white/[0.2] shadow-xl" role="none">
+        <a href="#" class="cursor-pointer block px-4 py-2 text-sm text-white whitespace-nowrap" role="menuitem" tabindex="-1" id="menu-item-0">Account settings</a>
+        <a href="#" class="cursor-pointer block px-4 py-2 text-sm text-white" role="menuitem" tabindex="-1" id="menu-item-1">Support</a>
+        <a href="#" class="cursor-pointer block px-4 py-2 text-sm text-white" role="menuitem" tabindex="-1" id="menu-item-2">License</a>
+      </div>
+    <% end %>
+
+    <%= render Dropdown::Hover.new(name: "Gói Tập", href: "#plans") do %>
+      <div class="bg-zinc-950 backdrop-blur-sm rounded-2xl overflow-hidden border border-white/[0.2] shadow-xl" role="none">
+        <a href="#" class="cursor-pointer block px-4 py-2 text-sm text-white whitespace-nowrap" role="menuitem" tabindex="-1" id="menu-item-0">Account settings</a>
+        <a href="#" class="cursor-pointer block px-4 py-2 text-sm text-white" role="menuitem" tabindex="-1" id="menu-item-1">Support</a>
+        <a href="#" class="cursor-pointer block px-4 py-2 text-sm text-white" role="menuitem" tabindex="-1" id="menu-item-2">License</a>
+      </div>
+    <% end %>
+
+    <%= link_to "Về Chúng Tôi", "#about", class: "hover:opacity-[0.9] text-white" %>
+  </nav>
+
+  <div class="basis-2/12">
+    <button class="relative inline-flex h-12 overflow-hidden rounded-full p-[1px] focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50">
+      <span class="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)]" ></span>
+      <span class="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-slate-950 px-3 py-1 text-sm font-medium text-white backdrop-blur-3xl">
+          Đăng ký đi
+      </span>
+    </button>
+  </div>
+
+</header>
+<main class="mt-16 max-w-4xl mx-auto">
+  <%= yield %>
+</main>
+</body>
+</html>
