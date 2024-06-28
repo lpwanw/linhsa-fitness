@@ -2,4 +2,10 @@
 
 class BaseComponent < ViewComponent::Base
   include Devise::Controllers::Helpers
+
+  private
+
+  def children
+    content
+  end
 end

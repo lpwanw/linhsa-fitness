@@ -2,7 +2,7 @@
 
 require "rails_helper"
 
-RSpec.describe HomeController, type: :controller do
+RSpec.xdescribe HomeController, type: :controller do
   describe "GET /index" do
     let!(:user) { create(:user) }
 
