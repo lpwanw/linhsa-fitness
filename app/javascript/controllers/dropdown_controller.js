@@ -12,7 +12,6 @@ export default class extends Controller {
   }
 
   connect() {
-    console.log(this.enterClassValue)
     if (this.typeValue === "hover") {
       this.element.addEventListener("mouseenter", () => {
         this.activeValue = true;
