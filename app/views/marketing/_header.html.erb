@@ -1,0 +1,74 @@
+<header class="flex justify-between items-center fixed top-2 inset-x-0 w-full px-8 z-50">
+  <%= link_to root_path, class: "basis-2/12" do %>
+    <%= inline_svg_tag "logo.svg", class: "w-16 h-16" %>
+  <% end %>
+
+  <nav class="relative rounded-full border bg-zinc-950 border-white/[0.2] shadow-input flex justify-center space-x-4 px-8 py-6">
+    <%= link_to "Câu Lạc Bộ", "#club", class: "hover:opacity-[0.9] text-white" %>
+    <%= link_to "Lịch Tập", "#schedule", class: "hover:opacity-[0.9] text-white" %>
+
+    <%= render Dropdown::Hover.new(name: "Bộ Môn") do %>
+      <div class="text-sm grid grid-cols-2 gap-10 p-4">
+        <%= link_to "#abc", class: "flex space-x-2" do %>
+          <%= image_tag "placeholder.jpg", class: "flex-shrink-0 rounded-md shadow-2xl", width: "140px", height: "70px"%>
+          <div>
+            <h4 class="text-xl font-bold mb-1 text-white">
+              {title}
+            </h4>
+            <p class="text-sm max-w-[10rem] text-neutral-300">
+              {description}
+            </p>
+          </div>
+        <% end %>
+
+        <%= link_to "#abc", class: "flex space-x-2" do %>
+          <%= image_tag "placeholder.jpg", class: "flex-shrink-0 rounded-md shadow-2xl", width: "140px", height: "70px"%>
+          <div>
+            <h4 class="text-xl font-bold mb-1 text-white">
+              {title}
+            </h4>
+            <p class="text-sm max-w-[10rem] text-neutral-300">
+              {description}
+            </p>
+          </div>
+        <% end %>
+
+        <%= link_to "#abc", class: "flex space-x-2" do %>
+          <%= image_tag "placeholder.jpg", class: "flex-shrink-0 rounded-md shadow-2xl", width: "140px", height: "70px"%>
+          <div>
+            <h4 class="text-xl font-bold mb-1 text-white">
+              {title}
+            </h4>
+            <p class="text-sm max-w-[10rem] text-neutral-300">
+              {description}
+            </p>
+          </div>
+        <% end %>
+
+        <%= link_to "#abc", class: "flex space-x-2" do %>
+          <%= image_tag "placeholder.jpg", class: "flex-shrink-0 rounded-md shadow-2xl", width: "140px", height: "70px"%>
+          <div>
+            <h4 class="text-xl font-bold mb-1 text-white">
+              {title}
+            </h4>
+            <p class="text-sm max-w-[10rem] text-neutral-300">
+              {description}
+            </p>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+
+    <%= link_to "Gói Tập", "#plans", class: "hover:opacity-[0.9] text-white" %>
+    <%= link_to "Về Chúng Tôi", "#about", class: "hover:opacity-[0.9] text-white" %>
+  </nav>
+
+  <div class="basis-2/12">
+    <button class="relative inline-flex h-12 overflow-hidden rounded-full p-[1px] focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50">
+      <span class="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)]" ></span>
+      <span class="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-slate-950 px-3 py-1 text-sm font-medium text-white backdrop-blur-3xl">
+          Đăng ký đi
+      </span>
+    </button>
+  </div>
+</header>
