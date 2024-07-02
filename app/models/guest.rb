@@ -3,7 +3,7 @@
 class Guest < ApplicationRecord
   # TODO: add phone format
   validates :phone, presence: true
-  validates :phone, uniqueness: { case_sensitive: false }
+  validates :phone, uniqueness: true
   validates :phone, length: { maximum: 10 }
 
   validates :name, presence: true
