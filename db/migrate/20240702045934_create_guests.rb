@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class CreateGuests < ActiveRecord::Migration[7.1]
-  def change
+  def up
     create_table :guests do |t|
       t.string :phone, null: false, index: { unique: true }
       t.string :name, null: false
@@ -10,5 +10,17 @@ class CreateGuests < ActiveRecord::Migration[7.1]
 
       t.timestamps
     end
+
+    execute <<-SQL
+      CREATE UNIQUE INDEX unique_lower_phone ON guests (lower(phone));
+    SQL
+  end
+
+  def down
+    execute <<-SQL
+      DROP INDEX IF EXISTS unique_lower_phone;
+    SQL
+
+    drop_table :guests
   end
 end

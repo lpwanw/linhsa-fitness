@@ -46,6 +46,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_02_045934) do
     t.text "note"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index "lower(phone)", name: "unique_lower_phone", unique: true
     t.index ["phone"], name: "index_guests_on_phone", unique: true
   end
 
