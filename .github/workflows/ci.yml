@@ -45,5 +45,7 @@ jobs:
         run: bundle exec rubocop
       - name: Run rails_best_practices
         run: bundle exec rails_best_practices
+      - name: Run erb html lint
+        run: bundle exec erblint --lint-all
       - name: Run brakeman
         run: bundle exec brakeman
