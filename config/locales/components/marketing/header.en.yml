@@ -2,8 +2,9 @@
 en:
   marketing:
     header:
-      about: About
-      calendars: Calendars
-      clubs: Club
-      courses: Courses
-      prices: Prices
+      navigation:
+        about: About
+        calendars: Calendars
+        clubs: Club
+        courses: Courses
+        prices: Prices
