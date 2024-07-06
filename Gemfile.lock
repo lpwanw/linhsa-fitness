@@ -446,7 +446,6 @@ PLATFORMS
 
 DEPENDENCIES
   active_record_doctor
-  better_html
   bootsnap
   brakeman
   bullet
