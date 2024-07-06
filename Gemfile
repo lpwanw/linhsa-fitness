@@ -35,6 +35,7 @@ end
 group :development do
   gem "brakeman"
   gem "bundler-audit"
+  gem "erb_lint"
   gem "letter_opener"
   gem "letter_opener_web"
   gem "pry"
@@ -46,7 +47,6 @@ group :development do
   gem "rubocop-rspec"
   gem "rubocop-rspec_rails"
   gem "web-console"
-  gem "erb_lint"
 end
 
 group :test do
