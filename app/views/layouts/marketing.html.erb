@@ -9,9 +9,9 @@
   <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
   <%= javascript_importmap_tags %>
 </head>
-<body class="bg-zinc-950 text-white">
+<body class="bg-gray-950 text-white dark">
 <%= render "shared/flash_container" %>
-<%= render "marketing/header" %>
+<%= render Marketing::Header.new %>
 
 <main class="mt-24 max-w-4xl mx-auto">
   <%= yield %>
