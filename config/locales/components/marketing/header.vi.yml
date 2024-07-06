@@ -2,8 +2,8 @@
 vi:
   marketing:
     header:
-      clubs: "Câu Lạc Bộ"
-      calendars: "Lịch Tập"
-      courses: "Khoá Học"
-      prices: "Gói Tập"
-      about: "Về Chúng Tôi"
+      about: Về Chúng Tôi
+      calendars: Lịch Tập
+      clubs: Câu Lạc Bộ
+      courses: Khoá Học
+      prices: Gói Tập
