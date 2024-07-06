@@ -59,6 +59,7 @@ search:
   ## Root directories for relative keys resolution.
   relative_roots:
     - app/controllers
+    - app/components
     - app/helpers
     - app/mailers
     - app/presenters
