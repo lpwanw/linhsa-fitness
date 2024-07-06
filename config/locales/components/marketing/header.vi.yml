@@ -2,8 +2,9 @@
 vi:
   marketing:
     header:
-      about: Về Chúng Tôi
-      calendars: Lịch Tập
-      clubs: Câu Lạc Bộ
-      courses: Khoá Học
-      prices: Gói Tập
+      navigation:
+        about: Về Chúng Tôi
+        calendars: Lịch Tập
+        clubs: Câu Lạc Bộ
+        courses: Khoá Học
+        prices: Gói Tập

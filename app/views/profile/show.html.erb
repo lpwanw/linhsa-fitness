@@ -3,12 +3,14 @@
     <h3 class="text-base font-semibold leading-7 text-gray-900"><%= t ".heading" %></h3>
     <p class="mt-1 max-w-2xl text-sm leading-6 text-gray-500"><%= t ".detail" %></p>
   </div>
-  <%= form_for @profile,
-    url: profile_path,
-    method: :patch,
-    html: {
-      class: "mx-auto mt-5",
-    } do |f| %>
+  <%= form_for(
+        @profile,
+        url: profile_path,
+        method: :patch,
+        html: {
+          class: "mx-auto mt-5",
+        }
+      ) do |f| %>
     <div class="mb-5 flex justify-center">
       <%= image_tag avatar_for(current_user), class: "w-20 h-20 rounded-full" %>
 
@@ -20,13 +22,14 @@
 
     <div class="mb-5">
       <% name_error = f.object.errors.full_messages_for(:name).to_sentence %>
-      <%= f.label :name, class: "block mb-2 text-sm font-medium text-gray-900 dark:text-white #{ "text-red-700" if name_error.present? }" %>
-      <%= f.text_field :name,
-        class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg
-                focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5
-                dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500
-                 #{ "bg-red-50 border-red-500 text-red-900 placeholder-red-700" if name_error.present? }"
-      %>
+      <%= f.label :name, class: "block mb-2 text-sm font-medium text-gray-900 dark:text-white #{'text-red-700' if name_error.present?}" %>
+      <%= f.text_field(
+            :name,
+            class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg
+                    focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5
+                    dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500
+                     #{'bg-red-50 border-red-500 text-red-900 placeholder-red-700' if name_error.present?}"
+          ) %>
       <% if name_error.present? %>
         <p class="mt-2 text-sm text-red-600 dark:text-red-500"><span class="font-medium">Oops!</span> <%= name_error %></p>
       <% end %>
@@ -34,13 +37,14 @@
 
     <div class="mb-5">
       <% dob_error = f.object.errors.full_messages_for(:dob).to_sentence %>
-      <%= f.label :dob, class: "block mb-2 text-sm font-medium text-gray-900 dark:text-white #{ "text-red-700" if dob_error.present? }" %>
-      <%= f.date_field :dob,
-        class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg
-                focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5
-                dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500
-                 #{ "bg-red-50 border-red-500 text-red-900 placeholder-red-700" if dob_error.present? }"
-      %>
+      <%= f.label :dob, class: "block mb-2 text-sm font-medium text-gray-900 dark:text-white #{'text-red-700' if dob_error.present?}" %>
+      <%= f.date_field(
+            :dob,
+            class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg
+                    focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5
+                    dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500
+                     #{'bg-red-50 border-red-500 text-red-900 placeholder-red-700' if dob_error.present?}"
+          ) %>
       <% if dob_error.present? %>
         <p class="mt-2 text-sm text-red-600 dark:text-red-500"><span class="font-medium">Oops!</span> <%= dob_error %></p>
       <% end %>
@@ -48,11 +52,12 @@
 
     <div class="mb-5">
       <%= f.label :locale, class: "block mb-2 text-sm font-medium text-gray-900 dark:text-white" %>
-      <%= f.select :locale,
-        I18n.available_locales.map { |locale| [t("languages.#{locale}"), locale] },
-        {},
-        class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-      %>
+      <%= f.select(
+            :locale,
+            I18n.available_locales.map { |locale| [t("languages.#{locale}"), locale] },
+            {},
+            class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+          ) %>
     </div>
 
     <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"><%= t ".submit" %></button>

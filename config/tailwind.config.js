@@ -27,6 +27,7 @@ module.exports = {
     colors: {
       ...colors,
       gray: colors.zinc,
+      primary: colors.yellow
     },
     screens: {
       sm: "480px",
