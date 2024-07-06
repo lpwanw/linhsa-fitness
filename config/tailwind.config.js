@@ -1,4 +1,5 @@
 const defaultTheme = require("tailwindcss/defaultTheme");
+const colors = require('tailwindcss/colors')
 
 module.exports = {
   content: [
@@ -23,6 +24,10 @@ module.exports = {
     "shadow-lg",
   ],
   theme: {
+    colors: {
+      ...colors,
+      gray: colors.zinc,
+    },
     screens: {
       sm: "480px",
       md: "768px",

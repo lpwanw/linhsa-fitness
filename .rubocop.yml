@@ -20,3 +20,6 @@ Style/ClassAndModuleChildren:
   EnforcedStyle: compact
   Exclude:
     - config/application.rb
+
+Style/TrailingCommaInHashLiteral:
+  EnforcedStyleForMultiline: consistent_comma
