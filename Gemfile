@@ -46,6 +46,7 @@ group :development do
   gem "rubocop-rspec"
   gem "rubocop-rspec_rails"
   gem "web-console"
+  gem "erb_lint"
 end
 
 group :test do
