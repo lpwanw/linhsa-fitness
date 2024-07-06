@@ -35,6 +35,7 @@ end
 group :development do
   gem "brakeman"
   gem "bundler-audit"
+  gem "erb_lint"
   gem "letter_opener"
   gem "letter_opener_web"
   gem "pry"

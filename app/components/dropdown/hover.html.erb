@@ -2,12 +2,10 @@
      data-controller="dropdown"
      data-dropdown-enter-class-value="ease-out duration-100 opacity-100 scale-100 pointer-events-auto"
      data-dropdown-leave-class-value="ease-in duration-75 opacity-0 scale-95 pointer-events-none"
-     data-dropdown-active-value="false" data-dropdown-type-value="hover"
->
-  <%= content_tag href.present? ? :a : :p, name, class: "cursor-pointer hover:opacity-[0.9] text-white", href: href %>
+     data-dropdown-active-value="false" data-dropdown-type-value="hover">
+  <%= content_tag href.present? ? :a : :p, name, class: "cursor-pointer hover:opacity-[0.9] text-white", href: %>
   <div class="pointer-events-none absolute left-1/2 transition transform opacity-0 scale-95 -translate-x-1/2 pt-4 z-40"
-       data-dropdown-target="target"
-  >
+       data-dropdown-target="target">
     <div class="w-max h-full p-4 bg-black backdrop-blur-sm rounded-2xl overflow-hidden border border-white/[0.2] shadow-xl">
       <%= children %>
     </div>
