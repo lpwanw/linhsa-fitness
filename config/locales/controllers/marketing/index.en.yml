@@ -2,6 +2,21 @@
 en:
   marketing:
     index:
+      feature:
+        first:
+          heading: YOGA package
+          items:
+            '0': 20$ / month
+            '1': Unlimited workouts
+            '2': Instructor-led classes
+          paragraph: A yoga package at LinhSa Fitness comes with full privileges, allowing you to achieve the body and health you desire.
+        second:
+          heading: GYM/BOXING package
+          items:
+            first: 20$ / month
+            second: Unlimited workouts
+            third: Free session with a personal trainer
+          paragraph: A gym package at LinhSa Fitness comes with full privileges, allowing you to experience our high-quality services.
       hero:
         cta: Register now to receive support
         description: Enhance your health, improve your physique, and boost your confidence with the LinhSa Fitness team.

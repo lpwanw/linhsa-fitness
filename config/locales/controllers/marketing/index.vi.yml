@@ -2,6 +2,21 @@
 vi:
   marketing:
     index:
+      feature:
+        first:
+          heading: GÓI TẬP YOGA
+          items:
+            '0': 395.000đ / tháng
+            '1': Tập không giới hạn
+            '2': Giảng viên đứng lớp
+          paragraph: Một gói tập yoga sở hữu đầy đủ đặc quyền tại LinhSa Fitness để bạn có được thân hình và sức khỏe như mong muốn.
+        second:
+          heading: GÓI TẬP GYM/BOXING
+          items:
+            first: 395.000đ / tháng
+            second: Tập không giới hạn
+            third: Tặng buổi tập với PT
+          paragraph: Một gói tập gym sở hữu đầy đủ đặc quyền tại LinhSa Fitness để bạn trải nghiệm dịch vụ chất lượng cao của chúng tôi.
       hero:
         cta: Đăng ký ngay để nhận hỗ trợ
         description: Tăng cường sức khoẻ, cải thiện vóc dáng, nâng hạng tự tin cùng với đội ngũ LinhSa Fitness
