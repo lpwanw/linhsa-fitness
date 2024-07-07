@@ -13,9 +13,9 @@ vi:
         second:
           heading: GÓI TẬP GYM/BOXING
           items:
-            0: 395.000đ / tháng
-            1: Tập không giới hạn
-            2: Tặng buổi tập với PT
+            '0': 395.000đ / tháng
+            '1': Tập không giới hạn
+            '2': Tặng buổi tập với PT
           paragraph: Một gói tập gym sở hữu đầy đủ đặc quyền tại LinhSa Fitness để bạn trải nghiệm dịch vụ chất lượng cao của chúng tôi.
       hero:
         cta: Đăng ký ngay để nhận hỗ trợ
