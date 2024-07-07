@@ -4,11 +4,8 @@
 
 import { application } from "./application"
 
-import DropdownController from "./dropdown_controller"
-application.register("dropdown", DropdownController)
+import DarkController from "./dark_controller"
+application.register("dark", DarkController)
 
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
-
-import SetStateController from "./set_state_controller"
-application.register("set-state", SetStateController)
