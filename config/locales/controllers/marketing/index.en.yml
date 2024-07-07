@@ -13,9 +13,9 @@ en:
         second:
           heading: GYM/BOXING package
           items:
-            1: 20$ / month
-            2: Unlimited workouts
-            3: Free session with a personal trainer
+            '0': 20$ / month
+            '1': Unlimited workouts
+            '2': Free session with a personal trainer
           paragraph: A gym package at LinhSa Fitness comes with full privileges, allowing you to experience our high-quality services.
       hero:
         cta: Register now to receive support
