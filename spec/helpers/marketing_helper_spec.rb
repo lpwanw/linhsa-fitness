@@ -1,7 +1,9 @@
-require 'rails_helper'
+# frozen_string_literal: true
+
+require "rails_helper"
 
 RSpec.describe MarketingHelper, type: :helper do
-  describe '#marketing_navigations' do
+  describe "#marketing_navigations" do
     subject { helper.marketing_navigations }
 
     it { is_expected.to be_an(Array) }
