@@ -2,6 +2,18 @@
 vi:
   marketing:
     index:
+      activities:
+        aerobic:
+          description: Tham gia vào các buổi tập aerobic năng động của chúng tôi nhằm cải thiện sức bền tim mạch, đốt cháy calo và nâng cao sức khỏe tổng thể. Tận hưởng các bài tập linh hoạt giữ cho bạn luôn được động viên và tiến gần hơn đến mục tiêu sức khỏe của mình.
+          title: Aerobic
+        description: Có rất nhiều lớp Yoga, Dance, Step tok trong ngày và trong tuần, mang đến cuộc sống lành mạnh tươi trẻ vào mỗi buổi sáng tối. KHÔNG GIỚI HẠN THỜI GIAN.
+        step_tok:
+          description: Nâng cao sức khỏe với các buổi tập step tok sôi động của chúng tôi. Kết hợp bài tập step aerobics với Tok movement để tăng cường sự phối hợp, sức bền và sức khỏe tim mạch trong một môi trường vui vẻ, hỗ trợ.
+          title: Step Tok
+        title: Hướng đến vóc dáng bạn mong muốn
+        yoga:
+          description: Khám phá bình an và sức mạnh bên trong qua các buổi tập yoga do các chuyên gia dẫn dắt. Dù bạn là người mới bắt đầu hay là người đã thành thạo, hãy tham gia cùng chúng tôi để cân bằng cơ thể, tâm trí và linh hồn hoàn hảo.
+          title: Yoga
       hero:
         cta: Đăng ký ngay để nhận hỗ trợ
         description: Tăng cường sức khoẻ, cải thiện vóc dáng, nâng hạng tự tin cùng với đội ngũ LinhSa Fitness
