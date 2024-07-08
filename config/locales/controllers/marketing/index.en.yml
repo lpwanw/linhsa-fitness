@@ -2,19 +2,19 @@
 en:
   marketing:
     index:
+      activities:
+        aerobic:
+          description: Join our energetic aerobic sessions designed to improve cardiovascular endurance, burn calories, and boost overall fitness. Enjoy dynamic workouts that keep you motivated and moving towards your health goals.
+          title: Aerobic
+        description: There are numerous Yoga, Dance, and Step Tok classes throughout the day and week, bringing healthy, youthful living to every morning and evening. NO TIME LIMIT.
+        step_tok:
+          description: Elevate your fitness with our invigorating step tok classes. Combine step aerobics with Tok movement to enhance coordination, stamina, and cardiovascular health in a fun, supportive environment.
+          title: Step Tok
+        title: Aim for the Body Shape You Desire
+        yoga:
+          description: Discover inner peace and strength through our expert-led yoga sessions. Whether you're a beginner or advanced practitioner, join us to align body, mind, and spirit in perfect harmony.
+          title: Yoga
       hero:
         cta: Sign up now for support
         description: Enhance your health, improve your physique, and boost your confidence with the LinhSa Fitness team
         title: Beautiful Physique for Everyone
-      activities:
-        title: Aim for the Body Shape You Desire
-        description: There are numerous Yoga, Dance, and Step Tok classes throughout the day and week, bringing healthy, youthful living to every morning and evening. NO TIME LIMIT.
-        yoga:
-          title: Yoga
-          description: Discover inner peace and strength through our expert-led yoga sessions. Whether you're a beginner or advanced practitioner, join us to align body, mind, and spirit in perfect harmony.
-        step_tok:
-          title: Step Tok
-          description: Elevate your fitness with our invigorating step tok classes. Combine step aerobics with Tok movement to enhance coordination, stamina, and cardiovascular health in a fun, supportive environment.
-        aerobic:
-          title: Aerobic
-          description: Join our energetic aerobic sessions designed to improve cardiovascular endurance, burn calories, and boost overall fitness. Enjoy dynamic workouts that keep you motivated and moving towards your health goals.
