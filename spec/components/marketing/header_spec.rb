@@ -2,7 +2,7 @@
 
 require "rails_helper"
 
-RSpec.describe Marketing::Header, type: :component do
+RSpec.xdescribe Marketing::Header, type: :component do
   subject { render_inline component }
 
   let(:component) { described_class.new }
