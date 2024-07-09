@@ -62,3 +62,21 @@ en:
       not_saved:
         one: '1 error prohibited this %{resource} from being saved:'
         other: "%{count} errors prohibited this %{resource} from being saved:"
+  users:
+    registrations:
+      new:
+        create_user: Sign up an Account
+        cta: Sign up
+    sessions:
+      new:
+        Forgot password?: Forgot password?
+        Sign in to your account: Sign in to your account
+        cta: Sign in
+    shared:
+      links:
+        Already have an account?: Already have an account?
+        Click me: Click me
+        Didn't receive confirmation instructions?: Didn't receive confirmation instructions?
+        Don’t have an account yet?: Don’t have an account yet?
+        Login here: Login here
+        Sign up here: Sign up here
