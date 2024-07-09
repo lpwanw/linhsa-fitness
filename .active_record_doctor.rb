@@ -2,9 +2,15 @@
 
 ActiveRecordDoctor.configure do
   # Global settings affect all detectors.
-  global :ignore_tables, %w[ar_internal_metadata schema_migrations active_storage_blobs active_storage_attachments action_text_rich_texts]
+  global :ignore_tables,
+         %w[ar_internal_metadata schema_migrations active_storage_blobs
+            active_storage_attachments action_text_rich_texts
+            roles users_roles]
 
-  global :ignore_models, %w[ActionText::RichText ActionText::EncryptedRichText ActiveStorage::VariantRecord ActiveStorage::Blob ActiveStorage::Attachment ActionMailbox::InboundEmail]
+  global :ignore_models,
+         %w[ActionText::RichText ActionText::EncryptedRichText
+            ActiveStorage::VariantRecord ActiveStorage::Blob
+            ActiveStorage::Attachment ActionMailbox::InboundEmail]
 
   detector :short_primary_key_type,
            enabled: false
