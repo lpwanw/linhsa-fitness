@@ -7,4 +7,8 @@ Rails.application.routes.draw do
   root "marketing#index"
 
   devise_for :users
+
+  namespace :member do
+    resources :dashboard, controller: :dashboard, only: %i[index]
+  end
 end
