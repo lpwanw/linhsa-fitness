@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_07_02_045934) do
+ActiveRecord::Schema[7.1].define(version: 2024_07_09_082617) do
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -39,32 +39,17 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_02_045934) do
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
 
-  create_table "guests", force: :cascade do |t|
-    t.string "phone", null: false
-    t.string "name", null: false
-    t.string "time_to_call"
-    t.text "note"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index "lower(phone)", name: "unique_lower_phone", unique: true
-  end
-
-  create_table "profiles", force: :cascade do |t|
-    t.integer "user_id", null: false
-    t.string "name"
-    t.date "dob"
-    t.string "locale", limit: 2, default: "en", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_profiles_on_user_id", unique: true
-  end
-
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
+    t.integer "sign_in_count", default: 0, null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string "current_sign_in_ip"
+    t.string "last_sign_in_ip"
     t.string "confirmation_token"
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
@@ -77,5 +62,4 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_02_045934) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "profiles", "users"
 end
