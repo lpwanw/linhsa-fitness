@@ -62,3 +62,21 @@ vi:
       not_saved:
         one: '1 lỗi đã ngăn %{resource} này được lưu:'
         other: "%{count} lỗi đã ngăn %{resource} này được lưu:"
+  users:
+    registrations:
+      new:
+        create_user: Đăng ký thành viên
+        cta: Tạo tài khoản
+    sessions:
+      new:
+        Forgot password?: Quên mật khẩu?
+        Sign in to your account: Đăng nhập vào tài khoản của bạn
+        cta: Đăng nhập
+    shared:
+      links:
+        Already have an account?: Bạn đã có tài khoản?
+        Click me: Nhấn vào đây
+        Didn't receive confirmation instructions?: Chưa nhận được email xác nhận?
+        Don’t have an account yet?: Bạn chưa có tài khoản?
+        Login here: Đăng nhập tại đây
+        Sign up here: Đăng ký tại đây

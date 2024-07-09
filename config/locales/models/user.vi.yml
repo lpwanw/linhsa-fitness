@@ -1,0 +1,11 @@
+---
+vi:
+  activerecord:
+    attributes:
+      user:
+        email: Email
+        password: Mật khẩu
+        password_confirmation: Xác nhận mật khẩu
+        remember_me: Ghi nhớ tôi
+    models:
+      user: Thành viên
