@@ -22,6 +22,11 @@ module.exports = {
     "h-9",
     "leading-9",
     "shadow-lg",
+    "bg-gray-900/50",
+    "dark:bg-gray-900/80",
+    "fixed",
+    "inset-0",
+    "z-30",
   ],
   theme: {
     screens: {
