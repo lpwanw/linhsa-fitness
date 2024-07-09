@@ -310,6 +310,7 @@ GEM
       railties (>= 5.2)
     rexml (3.2.8)
       strscan (>= 3.0.9)
+    rolify (6.0.1)
     rspec-core (3.13.0)
       rspec-support (~> 3.13.0)
     rspec-expectations (3.13.0)
@@ -468,6 +469,7 @@ DEPENDENCIES
   rails-controller-testing
   rails_best_practices
   redis (>= 4.0.1)
+  rolify
   rspec-rails
   rubocop
   rubocop-capybara
