@@ -3,7 +3,6 @@
 require "rails_helper"
 
 RSpec.describe UserRoles do
-
   UserRoles.roles.each do |role|
     describe ".#{role}" do
       subject { described_class.public_send(role) }
@@ -15,6 +14,6 @@ RSpec.describe UserRoles do
   describe ".roles" do
     subject { described_class.roles }
 
-    it { is_expected.to eq %i[member teacher admin]}
+    it { is_expected.to eq %i[member teacher admin] }
   end
 end
