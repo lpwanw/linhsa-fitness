@@ -1,8 +1,17 @@
 #!/bin/bash -e
 
-# If running the rails server then create or migrate existing database
+# Define the path to your SQLite database file
+DB_FILE="db/development.sqlite3"
+
+# Check if the first argument is './bin/rails' and the second is 'server'
 if [ "${1}" == "./bin/rails" ] && [ "${2}" == "server" ]; then
-  ./bin/rails db:prepare
+  # Check if the database file exists
+  if [ ! -f "${DB_FILE}" ]; then
+    echo "Database file not found. Running db:prepare..."
+    ./bin/rails db:prepare
+  else
+    echo "Database file exists. Skipping db:prepare..."
+  fi
 fi
 
 exec "${@}"
