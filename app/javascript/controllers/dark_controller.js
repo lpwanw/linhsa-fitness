@@ -5,7 +5,6 @@ export default class extends Controller {
   static targets = ["darkIcon", "lightIcon"]
 
   connect() {
-    console.log(this.darkIconTarget.classList)
     if (localStorage.getItem("color-theme") === "dark" || (!("color-theme" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
       this.lightIconTarget.classList.remove("hidden");
     } else {
