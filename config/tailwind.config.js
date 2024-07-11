@@ -27,6 +27,14 @@ module.exports = {
     "fixed",
     "inset-0",
     "z-30",
+    "text-red-500",
+    "bg-red-100",
+    "dark:bg-red-800",
+    "dark:text-red-200",
+    "text-green-500",
+    "bg-green-100",
+    "dark:bg-green-800",
+    "dark:text-green-200",
   ],
   theme: {
     screens: {
