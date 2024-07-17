@@ -8,4 +8,8 @@ class BaseComponent < ViewComponent::Base
   def children
     content
   end
+
+  def turbo_frame_tag(id, options = {}, &)
+    tag.turbo_frame(id:, **options, &)
+  end
 end
