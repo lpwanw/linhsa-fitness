@@ -20,7 +20,7 @@ FROM base as build
 # Install packages needed to build gems and node modules
 RUN apt-get update -qq && \
     apt-get install --no-install-recommends -y build-essential curl \
-            git libvips node-gyp pkg-config python-is-python3 libpq-dev libpq
+            git libvips node-gyp pkg-config python-is-python3 libpq-dev
 
 # Install JavaScript dependencies
 ARG NODE_VERSION=18.19.1
@@ -56,7 +56,7 @@ FROM base
 
 # Install packages needed for deployment
 RUN apt-get update -qq && \
-    apt-get install --no-install-recommends -y curl libsqlite3-0 libvips libpq-dev libpq && \
+    apt-get install --no-install-recommends -y curl libsqlite3-0 libvips libpq-dev && \
     rm -rf /var/lib/apt/lists /var/cache/apt/archives
 
 # Copy built artifacts: gems, application
