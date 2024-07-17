@@ -80,7 +80,7 @@ Rails.application.configure do
   # config.action_mailer.raise_delivery_errors = false
 
   config.action_mailer.default_url_options = {
-    url: ENV.fetch("HOST_URL", "https://linhsa-fitness-develop.onrender.com"),
+    host: ENV.fetch("HOST_URL", "https://linhsa-fitness-develop.onrender.com"),
   }
 
   config.action_mailer.delivery_method = :smtp
