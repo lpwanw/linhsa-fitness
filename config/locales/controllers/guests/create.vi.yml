@@ -1,0 +1,6 @@
+---
+vi:
+  guests:
+    create:
+      failed: Thông tin của bạn cung cấp có vẻ không đúng, vui lòng thử lại
+      success: Chúng tôi sẽ sớm liên lạc với bạn
