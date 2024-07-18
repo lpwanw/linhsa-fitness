@@ -1,0 +1,5 @@
+<%= render_turbo_flash_messages %>
+
+<% if params[:from] == "modal" %>
+  <%= turbo_stream.replace "modal", partial: "shared/empty_turbo_stream_tag", locals: { id: "modal" } %>
+<% end %>

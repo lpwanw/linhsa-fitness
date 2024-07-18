@@ -1,0 +1,11 @@
+---
+en:
+  activerecord:
+    attributes:
+      guest:
+        free_time: What time can we call you?
+        name: Name
+        note: What is your desire body?
+        phone: Phone Number
+    models:
+      guest: Guest

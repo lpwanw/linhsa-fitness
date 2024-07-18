@@ -20,6 +20,11 @@
 
 <%= render Marketing::Footer.new %>
 
-<%= turbo_frame_tag "modal" %>
+<% if "marketing#index" == "#{controller_name}##{action_name}" %>
+  <%= turbo_frame_tag "modal", data: { "turbo-permanent": true }, src: new_guest_path, cached: false %>
+<% else %>
+  <%= turbo_frame_tag "modal" %>
+<% end %>
+<div></div>
 </body>
 </html>

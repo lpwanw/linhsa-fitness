@@ -1,0 +1,11 @@
+---
+vi:
+  activerecord:
+    attributes:
+      guest:
+        free_time: Thời gian muốn nhận cuộc gọi?
+        name: Họ và tên
+        note: Nhu cầu của bạn?
+        phone: Số điện thoại
+    models:
+      guest: Khách hàng
