@@ -1,0 +1,6 @@
+---
+en:
+  guests:
+    create:
+      failed: Sorry, your provided information is invalid, please try to submit again
+      success: We'll contact you soon

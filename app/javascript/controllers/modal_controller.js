@@ -14,6 +14,10 @@ export default class extends Controller {
     }
   }
 
+  disconnect() {
+    this.modal.hide()
+  }
+
   toggle() {
     this.modal.toggle()
   }
