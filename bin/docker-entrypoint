@@ -1,17 +1,12 @@
 #!/bin/bash -e
 
-# Define the path to your SQLite database file
-DB_FILE="storage/production.sqlite3"
-
 # Check if the first argument is './bin/rails' and the second is 'server'
 if [ "${1}" == "./bin/rails" ] && [ "${2}" == "server" ]; then
   # Check if the database file exists
-  if [ ! -f "${DB_FILE}" ]; then
-    echo "Database file not found. Running db:prepare..."
-    ./bin/rails db:prepare
-  else
-    echo "Database file exists. Skipping db:prepare..."
-  fi
+  ./bin/rails db:prepare
+  echo "Prepared DB"
+  ./bin/rails create_admin_account
+  echo "Created admin"
 fi
 
 exec "${@}"
