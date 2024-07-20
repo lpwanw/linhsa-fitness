@@ -23,4 +23,6 @@ test:
 production:
   <<: *default
   adapter: postgresql
+  prepared_statements: false
+  advisory_locks: false
   database: <%= ENV.fetch("DATABASE_URL") { nil } %>
