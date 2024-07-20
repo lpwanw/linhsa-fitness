@@ -5,8 +5,8 @@ if [ "${1}" == "./bin/rails" ] && [ "${2}" == "server" ]; then
   # Check if the database file exists
   ./bin/rails db:prepare
   echo "Prepared DB"
-  ./bin/rails create_admin_account
-  echo "Created admin"
+#  ./bin/rails create_admin_account
+#  echo "Created admin"
 fi
 
 exec "${@}"
