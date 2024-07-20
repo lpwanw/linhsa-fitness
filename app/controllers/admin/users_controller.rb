@@ -2,6 +2,6 @@
 
 class Admin::UsersController < Admin::BaseController
   def index
-    @users = User.preload(:roles)
+    @pagy, @users = pagy(User.preload(:roles))
   end
 end
