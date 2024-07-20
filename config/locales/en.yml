@@ -218,3 +218,5 @@ en:
   languages:
     en: English
     vi: Vietnamese
+  users: "Users"
+  management: "Management"
