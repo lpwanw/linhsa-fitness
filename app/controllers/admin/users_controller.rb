@@ -2,6 +2,8 @@
 
 class Admin::UsersController < Admin::BaseController
   def index
-    @pagy, @users = pagy(User.preload(:roles))
+    @q = User.ransack(params[:q])
+    scope = @q.result(distinct: true).preload(:roles)
+    @pagy, @users = pagy(scope)
   end
 end
