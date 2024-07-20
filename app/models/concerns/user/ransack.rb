@@ -8,7 +8,7 @@ module User::Ransack
       ["email"]
     end
 
-    def self.ransackable_associations(auth_object = nil)
+    def self.ransackable_associations(_auth_object = nil)
       ["roles"]
     end
   end

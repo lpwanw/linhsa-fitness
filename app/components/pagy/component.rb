@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Pagy::Component < BaseComponent
   include Pagy::Frontend
 
