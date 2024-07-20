@@ -1,0 +1,7 @@
+---
+en:
+  pagy:
+    component:
+      Empty result!: Empty result!
+      Showing: Showing
+      of: of

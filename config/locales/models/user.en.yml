@@ -7,5 +7,6 @@ en:
         password: Password
         password_confirmation: Password Confirmation
         remember_me: Remember me
+        roles: Roles
     models:
       user: User

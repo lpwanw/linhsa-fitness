@@ -13,4 +13,8 @@ class Pagy::Component < BaseComponent
   private
 
   attr_reader :pagy
+
+  def empty_pagy?
+    pagy.prev.nil? && pagy.next.nil?
+  end
 end
