@@ -3,6 +3,11 @@ en:
   copy:
     management: Management
     users: Users
+    Choose role: Choose role
   languages:
     en: English
     vi: Vietnamese
+  roles:
+    admin: Admin
+    member: Member
+    teacher: Teacher

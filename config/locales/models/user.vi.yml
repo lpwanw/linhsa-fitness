@@ -7,5 +7,6 @@ vi:
         password: Mật khẩu
         password_confirmation: Xác nhận mật khẩu
         remember_me: Ghi nhớ tôi
+        roles: Vai trò
     models:
       user: Thành viên
