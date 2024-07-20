@@ -1,7 +1,8 @@
+---
 en:
+  copy:
+    management: Management
+    users: Users
   languages:
     en: English
     vi: Vietnamese
-  copy:
-    users: "Users"
-    management: "Management"

@@ -1,7 +1,8 @@
+---
 vi:
+  copy:
+    management: Quản lý
+    users: Người dùng
   languages:
     en: Tiếng Anh
     vi: Tiếng Việt
-  copy:
-    users: "Người dùng"
-    management: "Quản lý"
