@@ -11,6 +11,14 @@ Rails.application.routes.draw do
   resources :guests, only: %i[new create]
 
   namespace :member do
-    resources :dashboard, controller: :dashboard, only: %i[index]
+    get "/", to: "dashboard#index", as: :root
+  end
+
+  namespace :admin do
+    get "/", to: "dashboard#index", as: :root
+  end
+
+  namespace :teacher do
+    get "/", to: "dashboard#index", as: :root
   end
 end

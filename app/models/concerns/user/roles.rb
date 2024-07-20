@@ -18,4 +18,8 @@ module User::Roles
       has_role? role
     end
   end
+
+  def assigned_user_roles
+    UserRoles.roles & User.last.roles.map(&:name).map(&:to_sym)
+  end
 end
