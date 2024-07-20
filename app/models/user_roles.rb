@@ -2,6 +2,11 @@
 
 class UserRoles
   ROLES = %i[member teacher admin].freeze
+  ROLES_COLORS = {
+    member: :blue,
+    teacher: :indigo,
+    admin: :green,
+  }.freeze
 
   class << self
     ROLES.each do |role|

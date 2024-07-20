@@ -20,6 +20,6 @@ module User::Roles
   end
 
   def assigned_user_roles
-    UserRoles.roles & User.last.roles.map(&:name).map(&:to_sym)
+    UserRoles.roles & roles.map(&:name).map(&:to_sym)
   end
 end

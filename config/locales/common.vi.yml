@@ -1,0 +1,8 @@
+---
+vi:
+  copy:
+    management: Quản lý
+    users: Người dùng
+  languages:
+    en: Tiếng Anh
+    vi: Tiếng Việt
