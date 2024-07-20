@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Badge::Component < BaseComponent
   COLORS = %i[blue dark red green yellow indigo purple pink].freeze
 

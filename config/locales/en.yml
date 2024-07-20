@@ -215,8 +215,3 @@ en:
       long: "%B %d, %Y %H:%M"
       short: "%d %b %H:%M"
     pm: pm
-  languages:
-    en: English
-    vi: Vietnamese
-  users: "Users"
-  management: "Management"

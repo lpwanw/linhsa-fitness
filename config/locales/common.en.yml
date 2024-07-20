@@ -1,0 +1,7 @@
+en:
+  languages:
+    en: English
+    vi: Vietnamese
+  copy:
+    users: "Users"
+    management: "Management"
