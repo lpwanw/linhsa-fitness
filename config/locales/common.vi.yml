@@ -1,9 +1,9 @@
 ---
 vi:
   copy:
+    Choose role: Chọn vai trò
     management: Quản lý
     users: Người dùng
-    Choose role: Chọn vai trò
   languages:
     en: Tiếng Anh
     vi: Tiếng Việt
