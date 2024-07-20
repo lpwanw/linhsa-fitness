@@ -3,6 +3,11 @@ vi:
   copy:
     management: Quản lý
     users: Người dùng
+    Choose role: Chọn vai trò
   languages:
     en: Tiếng Anh
     vi: Tiếng Việt
+  roles:
+    admin: Quản trị viên
+    member: Học viên
+    teacher: Giáo viên
