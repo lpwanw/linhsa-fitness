@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_07_17_105233) do
+ActiveRecord::Schema[7.1].define(version: 2024_07_21_035706) do
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -48,6 +48,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_17_105233) do
     t.string "sale_note"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["name"], name: "index_guests_on_name"
+    t.index ["phone"], name: "index_guests_on_phone"
   end
 
   create_table "roles", force: :cascade do |t|

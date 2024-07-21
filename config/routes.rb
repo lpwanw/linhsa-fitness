@@ -18,6 +18,7 @@ Rails.application.routes.draw do
     get "/", to: "dashboard#index", as: :root
 
     resources :users, only: %i[index]
+    resources :guests, only: %i[index]
   end
 
   namespace :teacher do

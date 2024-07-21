@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class Guest < ApplicationRecord
+  include Guest::Ransack
+
   enum status: {
     registered: "registered",
     called: "called",
