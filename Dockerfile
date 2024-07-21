@@ -62,7 +62,6 @@ RUN apt-get update -qq && \
 # Copy built artifacts: gems, application
 COPY --from=build /usr/local/bundle /usr/local/bundle
 COPY --from=build /rails /rails
-COPY --from=build $HOME/.postgresql/root.crt $HOME/.postgresql/root.crt
 
 RUN curl --create-dirs -o $HOME/.postgresql/root.crt 'https://cloud.yugabyte.com/api/public/v1/connection-certificate'
 
