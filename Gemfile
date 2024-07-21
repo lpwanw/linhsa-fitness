@@ -8,6 +8,7 @@ gem "bootsnap", require: false
 gem "devise"
 gem "dotenv"
 # gem "image_processing"
+gem "good_job"
 gem "inline_svg"
 gem "jbuilder"
 gem "jsbundling-rails"
