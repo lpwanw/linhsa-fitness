@@ -2,10 +2,10 @@
 en:
   copy:
     Choose role: Choose role
+    Choose status: Choose status
+    guests: Guests
     management: Management
     users: Users
-    guests: Guests
-    Choose status: Choose status
   languages:
     en: English
     vi: Vietnamese

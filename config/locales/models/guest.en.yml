@@ -3,9 +3,19 @@ en:
   activerecord:
     attributes:
       guest:
+        created_at: Created at
         free_time: What time can we call you?
         name: Name
         note: What is your desire body?
         phone: Phone Number
+        sale_note: Sale note
+        status: Status
+        updated_at: Updated at
     models:
       guest: Guest
+  guest:
+    status:
+      appointment_scheduled: Appointment scheduled
+      called: Called
+      failed: Failed
+      registered: Registered
