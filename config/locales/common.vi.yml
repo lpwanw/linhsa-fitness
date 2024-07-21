@@ -2,10 +2,10 @@
 vi:
   copy:
     Choose role: Chọn vai trò
+    Choose status: Chọn trạng thái
+    guests: Khách
     management: Quản lý
     users: Người dùng
-    guests: Khách
-    Choose status: Chọn trạng thái
   languages:
     en: Tiếng Anh
     vi: Tiếng Việt
