@@ -7,9 +7,7 @@ class Admin::GuestsController < Admin::BaseController
     @pagy, @guests = pagy(scope)
   end
 
-  def import
-
-  end
+  def import; end
 
   def upload_csv
     Guest::ImportJob.perform_later
