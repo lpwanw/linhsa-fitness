@@ -1,0 +1,9 @@
+<div class="text-white">
+  Uploaded
+</div>
+
+<%= turbo_stream_from "guests_csv_upload_stream" %>
+
+<div id="guests_csv_upload_status">
+  <%= render Badge::Component.new(text: "Begun", color: :yellow) %>
+</div>
