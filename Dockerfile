@@ -31,9 +31,6 @@ RUN curl -sL https://github.com/nodenv/node-build/archive/master.tar.gz | tar xz
     npm install -g yarn@$YARN_VERSION && \
     rm -rf /tmp/node-build-master
 
-RUN curl --create-dirs -o $HOME/.postgresql/root.crt 'https://cloud.yugabyte.com/api/public/v1/connection-certificate'
-
-
 # Install application gems
 COPY Gemfile Gemfile.lock ./
 RUN bundle install && \
@@ -66,6 +63,8 @@ RUN apt-get update -qq && \
 COPY --from=build /usr/local/bundle /usr/local/bundle
 COPY --from=build /rails /rails
 COPY --from=build $HOME/.postgresql/root.crt $HOME/.postgresql/root.crt
+
+RUN curl --create-dirs -o $HOME/.postgresql/root.crt 'https://cloud.yugabyte.com/api/public/v1/connection-certificate'
 
 VOLUME ["/app/storage/"]
 
