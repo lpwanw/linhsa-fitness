@@ -19,12 +19,12 @@ jobs:
         ports:
           - "5432:5432"
         env:
-          POSTGRES_DB: rails_test
+          POSTGRES_DB: linhsa_test
           POSTGRES_USER: rails
           POSTGRES_PASSWORD: password
     env:
       RAILS_ENV: test
-      DATABASE_URL: "postgres://rails:password@localhost:5432/rails_test"
+      DATABASE_URL: "postgres://rails:password@localhost:5432/linhsa_test"
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
