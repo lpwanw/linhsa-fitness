@@ -3,7 +3,7 @@
 class Guest::ImportJob < ApplicationJob
   queue_as :default
 
-  def perform(*_args)
+  def perform(*_args) # rubocop:disable Metrics/MethodLength
     # Begin
     sleep(10)
     Rails.logger.info "Begin"
