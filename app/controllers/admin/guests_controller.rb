@@ -6,4 +6,11 @@ class Admin::GuestsController < Admin::BaseController
     scope = @q.result(distinct: true)
     @pagy, @guests = pagy(scope)
   end
+
+  def import; end
+
+  def upload_csv
+    Guest::ImportJob.perform_later
+    render "upload_csv", status: :accepted
+  end
 end

@@ -18,7 +18,10 @@ Rails.application.routes.draw do
     get "/", to: "dashboard#index", as: :root
 
     resources :users, only: %i[index]
-    resources :guests, only: %i[index]
+    resources :guests, only: %i[index] do
+      get :import, on: :collection
+      post :upload_csv, on: :collection
+    end
   end
 
   namespace :teacher do
