@@ -62,3 +62,9 @@ group :test do
   gem "shoulda-matchers"
   gem "simplecov", require: false
 end
+
+# rubocop:disable Bundler/OrderedGems
+gem "stackprof"
+gem "sentry-ruby"
+gem "sentry-rails"
+# rubocop:enable Bundler/OrderedGems
