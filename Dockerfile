@@ -37,8 +37,6 @@ RUN bundle install && \
     rm -rf ~/.bundle/ "${BUNDLE_PATH}"/ruby/*/cache "${BUNDLE_PATH}"/ruby/*/bundler/gems/*/.git && \
     bundle exec bootsnap precompile --gemfile
 
-RUN curl --create-dirs -o /home/rails/.postgresql/root.crt 'https://cloud.yugabyte.com/api/public/v1/connection-certificate'
-
 # Install node modules
 COPY package.json yarn.lock ./
 RUN yarn install --frozen-lockfile
@@ -64,6 +62,8 @@ RUN apt-get update -qq && \
 # Copy built artifacts: gems, application
 COPY --from=build /usr/local/bundle /usr/local/bundle
 COPY --from=build /rails /rails
+
+RUN curl --create-dirs -o /home/rails/.postgresql/root.crt 'https://cloud.yugabyte.com/api/public/v1/connection-certificate'
 
 VOLUME ["/app/storage/"]
 
