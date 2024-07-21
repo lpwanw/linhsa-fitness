@@ -5,12 +5,13 @@ ActiveRecordDoctor.configure do
   global :ignore_tables,
          %w[ar_internal_metadata schema_migrations active_storage_blobs
             active_storage_attachments action_text_rich_texts
-            roles users_roles]
+            roles users_roles good_jobs good_job_executions]
 
   global :ignore_models,
          %w[ActionText::RichText ActionText::EncryptedRichText
             ActiveStorage::VariantRecord ActiveStorage::Blob
-            ActiveStorage::Attachment ActionMailbox::InboundEmail]
+            ActiveStorage::Attachment ActionMailbox::InboundEmail
+            GoodJob::DiscreteExecution GoodJob::Job]
 
   detector :short_primary_key_type,
            enabled: false
