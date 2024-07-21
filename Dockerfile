@@ -63,8 +63,6 @@ RUN apt-get update -qq && \
 COPY --from=build /usr/local/bundle /usr/local/bundle
 COPY --from=build /rails /rails
 
-RUN curl --create-dirs -o /home/rails/.postgresql/root.crt 'https://cloud.yugabyte.com/api/public/v1/connection-certificate'
-
 VOLUME ["/app/storage/"]
 
 # Run and own only the runtime files as a non-root user for security
