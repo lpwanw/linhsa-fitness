@@ -3,9 +3,19 @@ vi:
   activerecord:
     attributes:
       guest:
+        created_at: Giờ đăng ký
         free_time: Thời gian muốn nhận cuộc gọi?
         name: Họ và tên
         note: Nhu cầu của bạn?
         phone: Số điện thoại
+        sale_note: Sale note
+        status: Trạng thái
+        updated_at: Giờ cập nhật
     models:
       guest: Khách hàng
+  guest:
+    status:
+      appointment_scheduled: Đã hẹn lịch
+      called: Đã gọi
+      failed: Thất bại
+      registered: Mới đăng ký
