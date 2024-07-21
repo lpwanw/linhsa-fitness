@@ -10,8 +10,8 @@ class RolifyCreateRoles < ActiveRecord::Migration[7.1]
     end
 
     create_table(:users_roles, id: false) do |t|
-      t.references :user
-      t.references :role
+      t.references :user, type: :uuid
+      t.references :role, type: :uuid
     end
 
     add_index(:roles, :name)
