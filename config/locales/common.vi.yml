@@ -4,6 +4,8 @@ vi:
     Choose role: Chọn vai trò
     management: Quản lý
     users: Người dùng
+    guests: Khách
+    Choose status: Chọn trạng thái
   languages:
     en: Tiếng Anh
     vi: Tiếng Việt

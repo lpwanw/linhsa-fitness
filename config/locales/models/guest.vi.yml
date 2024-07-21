@@ -7,5 +7,15 @@ vi:
         name: Họ và tên
         note: Nhu cầu của bạn?
         phone: Số điện thoại
+        status: Trạng thái
+        sale_note: Sale note
+        created_at: Giờ đăng ký
+        updated_at: Giờ cập nhật
     models:
       guest: Khách hàng
+  guest:
+    status:
+      registered: Mới đăng ký
+      called: Đã gọi
+      failed: Thất bại
+      appointment_scheduled: Đã hẹn lịch
