@@ -12,7 +12,7 @@ class Admin::ImportGuestsController < Admin::BaseController
   def create
     @import_file = ImportFile.new(import_file_params.merge(model: Guest.name))
     if @import_file.save
-      flash.now[:notice] = t(".success")
+      flash[:notice] = t(".success")
       redirect_to admin_import_guests_path
     else
       flash.now[:alert] = t(".failed")
