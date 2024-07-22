@@ -5,6 +5,7 @@ source "https://rubygems.org"
 ruby "3.2.2"
 
 gem "bootsnap", require: false
+gem "cloudinary"
 gem "devise"
 gem "dotenv"
 # gem "image_processing"

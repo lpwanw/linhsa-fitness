@@ -1,0 +1,7 @@
+---
+en:
+  admin:
+    import_guests:
+      create:
+        failed: Failed
+        success: Success

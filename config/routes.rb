@@ -22,6 +22,8 @@ Rails.application.routes.draw do
       get :import, on: :collection
       post :upload_csv, on: :collection
     end
+
+    resources :import_guests, only: %i[index new create]
   end
 
   namespace :teacher do
