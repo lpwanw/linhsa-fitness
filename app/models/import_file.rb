@@ -13,4 +13,5 @@ class ImportFile < ApplicationRecord
 
   validates :model, presence: true
   validates :name, presence: true
+  validates :status, inclusion: { in: statuses.values }, presence: true
 end
