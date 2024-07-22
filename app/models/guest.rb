@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class Guest < ApplicationRecord
+  include Guest::AfterCreate
   include Guest::Ransack
 
   enum status: {
