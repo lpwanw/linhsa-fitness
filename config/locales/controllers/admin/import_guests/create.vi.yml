@@ -1,0 +1,7 @@
+---
+vi:
+  admin:
+    import_guests:
+      create:
+        failed: Thất bại
+        success: Import thành công
