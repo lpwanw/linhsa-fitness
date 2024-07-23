@@ -43,7 +43,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_22_120304) do
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
 
-  create_table "good_job_batches", force: :cascade do |t|
+  create_table "good_job_batches", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.text "description"
@@ -58,10 +58,10 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_22_120304) do
     t.datetime "finished_at"
   end
 
-  create_table "good_job_executions", force: :cascade do |t|
+  create_table "good_job_executions", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "active_job_id", null: false
+    t.uuid "active_job_id", null: false
     t.text "job_class"
     t.text "queue_name"
     t.jsonb "serialized_params"
@@ -70,20 +70,20 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_22_120304) do
     t.text "error"
     t.integer "error_event", limit: 2
     t.text "error_backtrace", array: true
-    t.bigint "process_id"
+    t.uuid "process_id"
     t.interval "duration"
     t.index ["active_job_id", "created_at"], name: "index_good_job_executions_on_active_job_id_and_created_at"
     t.index ["process_id", "created_at"], name: "index_good_job_executions_on_process_id_and_created_at"
   end
 
-  create_table "good_job_processes", force: :cascade do |t|
+  create_table "good_job_processes", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.jsonb "state"
     t.integer "lock_type", limit: 2
   end
 
-  create_table "good_job_settings", force: :cascade do |t|
+  create_table "good_job_settings", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.text "key"
@@ -91,7 +91,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_22_120304) do
     t.index ["key"], name: "index_good_job_settings_on_key", unique: true
   end
 
-  create_table "good_jobs", force: :cascade do |t|
+  create_table "good_jobs", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.text "queue_name"
     t.integer "priority"
     t.jsonb "serialized_params"
@@ -101,19 +101,19 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_22_120304) do
     t.text "error"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "active_job_id"
+    t.uuid "active_job_id"
     t.text "concurrency_key"
     t.text "cron_key"
-    t.bigint "retried_good_job_id"
+    t.uuid "retried_good_job_id"
     t.datetime "cron_at"
-    t.bigint "batch_id"
-    t.bigint "batch_callback_id"
+    t.uuid "batch_id"
+    t.uuid "batch_callback_id"
     t.boolean "is_discrete"
     t.integer "executions_count"
     t.text "job_class"
     t.integer "error_event", limit: 2
     t.text "labels", array: true
-    t.bigint "locked_by_id"
+    t.uuid "locked_by_id"
     t.datetime "locked_at"
     t.index ["active_job_id", "created_at"], name: "index_good_jobs_on_active_job_id_and_created_at"
     t.index ["batch_callback_id"], name: "index_good_jobs_on_batch_callback_id", where: "(batch_callback_id IS NOT NULL)"
