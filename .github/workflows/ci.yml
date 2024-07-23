@@ -24,6 +24,8 @@ jobs:
           POSTGRES_PASSWORD: password
     env:
       RAILS_ENV: test
+      CONSOLE_USER: user
+      CONSOLE_ADMIN: admin
       DATABASE_URL: "postgres://rails:password@localhost:5432/linhsa_test"
     steps:
       - name: Checkout code
