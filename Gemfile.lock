@@ -512,6 +512,7 @@ DEPENDENCIES
   dotenv
   erb_lint
   factory_bot_rails
+  faraday
   ffaker
   good_job
   i18n-tasks

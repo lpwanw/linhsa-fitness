@@ -8,6 +8,7 @@ gem "bootsnap", require: false
 gem "cloudinary"
 gem "devise"
 gem "dotenv"
+gem "faraday"
 # gem "image_processing"
 gem "good_job"
 gem "inline_svg"
