@@ -30,6 +30,10 @@ gem "turbo-rails"
 gem "tzinfo-data", platforms: %i[ windows jruby ]
 gem "view_component"
 
+group :development, :production do
+  gem "web-console"
+end
+
 group :development, :test do
   gem "active_record_doctor"
   gem "bullet"
@@ -54,7 +58,6 @@ group :development do
   gem "rubocop-rails"
   gem "rubocop-rspec"
   gem "rubocop-rspec_rails"
-  gem "web-console"
 end
 
 group :test do
