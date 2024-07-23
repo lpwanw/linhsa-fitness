@@ -16,7 +16,7 @@ class Guest::ImportJob < ApplicationJob
     count = 0
     csv.each do |row|
       count += 1
-      percent = ((count)*100) / total_count
+      percent = (count * 100) / total_count
       create_guest(row.to_h.with_indifferent_access)
       next if percent <= process_percent
 
@@ -32,7 +32,7 @@ class Guest::ImportJob < ApplicationJob
 
   def create_guest(row)
     guest = Guest.find_or_initialize_by(phone: row[:phone])
-    guest.assign_attributes(row.slice(:name, :note, :free_time))
+    guest.assign_attributes(row.slice(:name, :note, :free_time).merge(skip_notify_admin: true))
     guest.save!
   end
 end
