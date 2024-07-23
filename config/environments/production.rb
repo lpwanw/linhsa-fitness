@@ -114,4 +114,6 @@ Rails.application.configure do
   # Skip DNS rebinding protection for the default health check endpoint.
   # config.host_authorization = { exclude: ->(request) { request.path == "/up" } }
   config.web_console.development_only = false
+  config.web_console.whiny_requests = false
+  config.web_console.permissions = ["0.0.0.0/0"]
 end
