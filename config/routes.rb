@@ -3,6 +3,9 @@
 Rails.application.routes.draw do
   mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
   get "up" => "rails/health#show", as: :rails_health_check
+  authenticate :user, ->(user) { user.admin? } do
+    mount GoodJob::Engine => "good_job"
+  end
 
   root "marketing#index"
 
