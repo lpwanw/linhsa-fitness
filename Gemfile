@@ -29,7 +29,10 @@ gem "tailwindcss-rails"
 gem "turbo-rails"
 gem "tzinfo-data", platforms: %i[ windows jruby ]
 gem "view_component"
-gem "web-console"
+
+group :development, :production do
+  gem "web-console"
+end
 
 group :development, :test do
   gem "active_record_doctor"
