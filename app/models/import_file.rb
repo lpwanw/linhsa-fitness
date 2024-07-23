@@ -2,6 +2,7 @@
 
 class ImportFile < ApplicationRecord
   include ImportFile::BeforeValidation
+  include ImportFile::AfterCreate
 
   has_one_attached :file
 
@@ -14,4 +15,6 @@ class ImportFile < ApplicationRecord
   validates :model, presence: true
   validates :name, presence: true
   validates :status, inclusion: { in: statuses.values }, presence: true
+
+  scope :guest, -> { where(model: Guest.name) }
 end

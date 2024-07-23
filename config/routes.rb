@@ -23,7 +23,7 @@ Rails.application.routes.draw do
       post :upload_csv, on: :collection
     end
 
-    resources :import_guests, only: %i[index new create]
+    resources :import_guests, only: %i[index show new create]
   end
 
   namespace :teacher do

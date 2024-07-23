@@ -1,32 +1,38 @@
 # frozen_string_literal: true
 
+require "csv"
+
 class Guest::ImportJob < ApplicationJob
   queue_as :default
 
-  def perform(*_args) # rubocop:disable Metrics/MethodLength
-    # Begin
-    sleep(10)
-    Rails.logger.info "Begin"
-    Turbo::StreamsChannel.broadcast_replace_to(
-      "guests_csv_upload_stream",
-      target: "guests_csv_upload_status",
-      partial: "admin/guests/upload_status", locals: { text: "Running", color: :yellow }
-    )
-    # Running
-    sleep(10)
-    Rails.logger.info "Running"
-    Turbo::StreamsChannel.broadcast_replace_to(
-      "guests_csv_upload_stream",
-      target: "guests_csv_upload_status",
-      partial: "admin/guests/upload_status", locals: { text: "Importing", color: :blue }
-    )
-    # Done
-    sleep(10)
-    Rails.logger.info "Done"
-    Turbo::StreamsChannel.broadcast_replace_to(
-      "guests_csv_upload_stream",
-      target: "guests_csv_upload_status",
-      partial: "admin/guests/upload_status", locals: { text: "Done", color: :green }
-    )
+  def perform(import_file) # rubocop:disable Metrics/MethodLength
+    import_file.processing!
+
+    data = import_file.file.download
+
+    csv = CSV.new(data, headers: true)
+    total_count = CSV.new(data, headers: true).count
+    process_percent = 0
+    count = 0
+    csv.each do |row|
+      count += 1
+      percent = (count * 100) / total_count
+      create_guest(row.to_h.with_indifferent_access)
+      next if percent <= process_percent
+
+      process_percent = percent
+      Turbo::StreamsChannel.broadcast_replace_to(
+        "import_guest_#{import_file.id}",
+        target: "progress_bar",
+        partial: "admin/import_guests/import_progress",
+        locals: { percent: process_percent }
+      )
+    end
+  end
+
+  def create_guest(row)
+    guest = Guest.find_or_initialize_by(phone: row[:phone])
+    guest.assign_attributes(row.slice(:name, :note, :free_time).merge(skip_notify_admin: true))
+    guest.save!
   end
 end
