@@ -6,4 +6,8 @@ if Rails.env.production?
       super
     end
   end
+
+  Rails.application.configure do
+    config.web_console.permissions = ENV.fetch("CONSOLE_ALLOW_IPS", "").split
+  end
 end
