@@ -29,6 +29,7 @@ gem "tailwindcss-rails"
 gem "turbo-rails"
 gem "tzinfo-data", platforms: %i[ windows jruby ]
 gem "view_component"
+gem "web-console"
 
 group :development, :test do
   gem "active_record_doctor"
@@ -54,7 +55,6 @@ group :development do
   gem "rubocop-rails"
   gem "rubocop-rspec"
   gem "rubocop-rspec_rails"
-  gem "web-console"
 end
 
 group :test do

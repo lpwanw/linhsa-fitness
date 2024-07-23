@@ -27,6 +27,8 @@ Rails.application.routes.draw do
     end
 
     resources :import_guests, only: %i[index show new create]
+
+    resource :console, controller: :console, only: %i[show]
   end
 
   namespace :teacher do
