@@ -2,7 +2,7 @@
 
 class CreateGuests < ActiveRecord::Migration[7.1]
   def change
-    create_table :guests, id: :uuid do |t|
+    create_table :guests, id: :bigint do |t|
       t.string :name, null: false, index: true
       t.string :phone, null: false, index: true
       t.string :note, null: false

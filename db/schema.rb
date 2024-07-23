@@ -131,7 +131,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_22_120304) do
     t.index ["scheduled_at"], name: "index_good_jobs_on_scheduled_at", where: "(finished_at IS NULL)"
   end
 
-  create_table "guests", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+  create_table "guests", force: :cascade do |t|
     t.string "name", null: false
     t.string "phone", null: false
     t.string "note", null: false
@@ -144,7 +144,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_22_120304) do
     t.index ["phone"], name: "index_guests_on_phone"
   end
 
-  create_table "import_files", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+  create_table "import_files", force: :cascade do |t|
     t.string "name", null: false
     t.string "model", null: false
     t.string "status", default: "created", null: false
@@ -153,7 +153,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_22_120304) do
     t.index ["name"], name: "index_import_files_on_name"
   end
 
-  create_table "roles", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+  create_table "roles", force: :cascade do |t|
     t.string "name"
     t.string "resource_type"
     t.bigint "resource_id"
@@ -164,7 +164,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_22_120304) do
     t.index ["resource_type", "resource_id"], name: "index_roles_on_resource"
   end
 
-  create_table "users", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+  create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
@@ -186,8 +186,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_22_120304) do
   end
 
   create_table "users_roles", id: false, force: :cascade do |t|
-    t.uuid "user_id"
-    t.uuid "role_id"
+    t.bigint "user_id"
+    t.bigint "role_id"
     t.index ["role_id"], name: "index_users_roles_on_role_id"
     t.index ["user_id", "role_id"], name: "index_users_roles_on_user_id_and_role_id"
     t.index ["user_id"], name: "index_users_roles_on_user_id"
