@@ -4,7 +4,7 @@ class CreateGoodJobs < ActiveRecord::Migration[7.1]
   def change # rubocop:disable Metrics/AbcSize, Metrics/MethodLength
     # Uncomment for Postgres v12 or earlier to enable gen_random_uuid() support
 
-    create_table :good_jobs, id: :uuid do |t|
+    create_table :good_jobs, id: :bigint do |t|
       t.text :queue_name
       t.integer :priority
       t.jsonb :serialized_params
@@ -15,14 +15,14 @@ class CreateGoodJobs < ActiveRecord::Migration[7.1]
 
       t.timestamps
 
-      t.uuid :active_job_id
+      t.bigint :active_job_id
       t.text :concurrency_key
       t.text :cron_key
-      t.uuid :retried_good_job_id
+      t.bigint :retried_good_job_id
       t.datetime :cron_at
 
-      t.uuid :batch_id
-      t.uuid :batch_callback_id
+      t.bigint :batch_id
+      t.bigint :batch_callback_id
 
       # rubocop:disable Rails/ThreeStateBooleanColumn
       t.boolean :is_discrete
@@ -31,11 +31,11 @@ class CreateGoodJobs < ActiveRecord::Migration[7.1]
       t.text :job_class
       t.integer :error_event, limit: 2
       t.text :labels, array: true
-      t.uuid :locked_by_id
+      t.bigint :locked_by_id
       t.datetime :locked_at
     end
 
-    create_table :good_job_batches, id: :uuid do |t|
+    create_table :good_job_batches, id: :bigint do |t|
       t.timestamps
       t.text :description
       t.jsonb :serialized_properties
@@ -49,10 +49,10 @@ class CreateGoodJobs < ActiveRecord::Migration[7.1]
       t.datetime :finished_at
     end
 
-    create_table :good_job_executions, id: :uuid do |t|
+    create_table :good_job_executions, id: :bigint do |t|
       t.timestamps
 
-      t.uuid :active_job_id, null: false
+      t.bigint :active_job_id, null: false
       t.text :job_class
       t.text :queue_name
       t.jsonb :serialized_params
@@ -61,17 +61,17 @@ class CreateGoodJobs < ActiveRecord::Migration[7.1]
       t.text :error
       t.integer :error_event, limit: 2
       t.text :error_backtrace, array: true
-      t.uuid :process_id
+      t.bigint :process_id
       t.interval :duration
     end
 
-    create_table :good_job_processes, id: :uuid do |t|
+    create_table :good_job_processes, id: :bigint do |t|
       t.timestamps
       t.jsonb :state
       t.integer :lock_type, limit: 2
     end
 
-    create_table :good_job_settings, id: :uuid do |t|
+    create_table :good_job_settings, id: :bigint do |t|
       t.timestamps
       t.text :key
       t.jsonb :value
