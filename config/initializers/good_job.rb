@@ -2,6 +2,7 @@
 
 Rails.application.configure do
   config.good_job.enable_cron = true
+  config.good_job.cleanup_preserved_jobs_before_seconds_ago = 1.hour
   config.good_job.cron = {
     save_my_self: { # each recurring job must have a unique key
       cron: "*/1 * * * *", # cron-style scheduling format by fugit gem
