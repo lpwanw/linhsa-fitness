@@ -1,0 +1,16 @@
+---
+vi:
+  activerecord:
+    attributes:
+      import_file:
+        created_at: Giờ tạo
+        name: Tên file
+        status: Trạng thái
+        updated_at: Giờ cập nhật
+    models:
+      import_file: Import File
+  import_file:
+    status:
+      completed: hoàn thành
+      created: mới
+      processing: đang xử lý

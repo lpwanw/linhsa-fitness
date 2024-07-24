@@ -3,13 +3,14 @@
 class ImportFile < ApplicationRecord
   include ImportFile::BeforeValidation
   include ImportFile::AfterCreate
+  include ImportFile::Ransack
 
   has_one_attached :file
 
   enum status: {
     created: "created",
     processing: "processing",
-    processed: "processed",
+    completed: "completed",
   }
 
   validates :model, presence: true
