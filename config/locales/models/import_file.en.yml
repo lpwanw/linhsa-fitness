@@ -1,0 +1,16 @@
+---
+en:
+  activerecord:
+    attributes:
+      import_file:
+        created_at: Created at
+        name: Name
+        status: Status
+        updated_at: Updated at
+    models:
+      import_file: Import File
+  import_file:
+    status:
+      completed: Completed
+      created: Created
+      processing: Processing
