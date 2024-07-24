@@ -1,8 +1,12 @@
 ---
 en:
   copy:
+    Bulk import: Bulk import
     Choose role: Choose role
     Choose status: Choose status
+    Import Files: Import Files
+    Import Guests: Import Guests
+    Search: Search
     guests: Guests
     management: Management
     users: Users

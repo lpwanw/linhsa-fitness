@@ -1,8 +1,12 @@
 ---
 vi:
   copy:
+    Bulk import: Nhập bằng file
     Choose role: Chọn vai trò
     Choose status: Chọn trạng thái
+    Import Files: Import Files
+    Import Guests: Import Guests
+    Search: Tìm kiếm
     guests: Khách
     management: Quản lý
     users: Người dùng
