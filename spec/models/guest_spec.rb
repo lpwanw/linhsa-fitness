@@ -31,4 +31,28 @@ RSpec.describe Guest, type: :model do
         ).backed_by_column_of_type(:string)
     end
   end
+
+  describe "callbacks" do
+    describe "after_create" do
+      subject { guest.save }
+
+      let(:guest) { build(:guest, skip_notify_admin: false) }
+
+      it { expect { subject }.to have_enqueued_mail(GuestMailer, :notify_admin) }
+    end
+  end
+
+  describe "ransack" do
+    describe ".ransackable_attributes" do
+      subject { described_class.ransackable_attributes }
+
+      it { is_expected.to eq %w[name status phone] }
+    end
+
+    describe ".ransackable_associations" do
+      subject { described_class.ransackable_associations }
+
+      it { is_expected.to be_empty }
+    end
+  end
 end
