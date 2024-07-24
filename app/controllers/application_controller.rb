@@ -7,6 +7,8 @@ class ApplicationController < ActionController::Base
 
   helper_method :current_role
 
+  private
+
   def default_url_options
     { locale: I18n.locale }
   end

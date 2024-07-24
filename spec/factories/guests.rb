@@ -7,5 +7,6 @@ FactoryBot.define do
     note { FFaker::Lorem.sentences }
     free_time { FFaker::Lorem.sentence }
     status { Guest.statuses.values.sample }
+    skip_notify_admin { true }
   end
 end

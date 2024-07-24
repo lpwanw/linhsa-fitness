@@ -46,4 +46,26 @@ RSpec.describe User, type: :model do
       end
     end
   end
+
+  describe "#assigned_user_roles" do
+    subject { user.assigned_user_roles }
+
+    let(:user) { create(:user) }
+
+    it { is_expected.to eq [:member] }
+  end
+
+  describe "ransack" do
+    describe ".ransackable_attributes" do
+      subject { described_class.ransackable_attributes }
+
+      it { is_expected.to eq %w[email] }
+    end
+
+    describe ".ransackable_associations" do
+      subject { described_class.ransackable_associations }
+
+      it { is_expected.to eq %w[roles] }
+    end
+  end
 end
