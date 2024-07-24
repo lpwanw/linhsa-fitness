@@ -15,6 +15,7 @@ class ImportFile < ApplicationRecord
 
   validates :model, presence: true
   validates :name, presence: true
+  validates :name, length: { minimum: 3, maximum: 255 }
   validates :status, inclusion: { in: statuses.values }, presence: true
 
   scope :guest, -> { where(model: Guest.name) }
