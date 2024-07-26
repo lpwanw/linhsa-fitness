@@ -29,10 +29,7 @@ gem "tailwindcss-rails"
 gem "turbo-rails"
 gem "tzinfo-data", platforms: %i[ windows jruby ]
 gem "view_component"
-
-group :development, :production do
-  gem "web-console"
-end
+gem "web-console"
 
 group :development, :test do
   gem "active_record_doctor"
@@ -41,6 +38,7 @@ group :development, :test do
   gem "factory_bot_rails"
   gem "ffaker"
   gem "i18n-tasks"
+  gem "pry"
   gem "rspec-rails"
 end
 
@@ -50,7 +48,6 @@ group :development do
   gem "erb_lint"
   gem "letter_opener"
   gem "letter_opener_web"
-  gem "pry"
   gem "rails_best_practices"
   gem "rubocop"
   gem "rubocop-capybara"
@@ -67,6 +64,7 @@ group :test do
   gem "selenium-webdriver"
   gem "shoulda-matchers"
   gem "simplecov", require: false
+  gem "webmock"
 end
 
 # rubocop:disable Bundler/OrderedGems
