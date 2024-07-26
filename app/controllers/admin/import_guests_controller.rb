@@ -31,5 +31,9 @@ class Admin::ImportGuestsController < Admin::BaseController
 
   def load_import_file
     @import_file = ImportFile.guest.find_by id: params[:id]
+
+    return if @import_file
+
+    redirect_to admin_import_guests_path, alert: t("errors.messages.not_found")
   end
 end

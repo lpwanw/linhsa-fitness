@@ -30,5 +30,6 @@ module LinhSaFitness
     config.i18n.load_path += Dir[Rails.root.join("app/components/**/*.*.{rb,yml}")]
 
     I18n.available_locales = [:en, :vi]
+    config.web_console.development_only = false
   end
 end

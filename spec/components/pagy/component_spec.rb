@@ -5,7 +5,7 @@ require "rails_helper"
 RSpec.describe Pagy::Component, type: :component do
   subject { render_inline described_class.new pagy }
 
-  let(:pagy) { Pagy.new(count: count, page: 1) }
+  let(:pagy) { Pagy.new(count:, page: 1) }
   let(:count) { 20 }
 
   context "when render pagy" do
