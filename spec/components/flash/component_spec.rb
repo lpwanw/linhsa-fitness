@@ -5,7 +5,7 @@ require "rails_helper"
 RSpec.describe Flash::Component, type: :component do
   subject { render_inline component }
 
-  let(:component) {described_class.new flash_type, message }
+  let(:component) { described_class.new flash_type, message }
   let(:message) { FFaker::Lorem.sentence }
   let(:flash_type) { :alert }
 
