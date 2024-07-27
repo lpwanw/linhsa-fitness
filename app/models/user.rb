@@ -9,4 +9,6 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable,
          :confirmable, :trackable
+
+  has_many :courses, foreign_key: :creator_id, dependent: :nullify, inverse_of: :creator
 end
