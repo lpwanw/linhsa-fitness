@@ -39,6 +39,8 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 18
+      - name: Install packages
+        run: yarn
       - name: build assets
         run: bin/rails assets:precompile
       - name: Set up database schema
