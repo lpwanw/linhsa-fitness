@@ -1,14 +1,16 @@
 const defaultTheme = require("tailwindcss/defaultTheme");
 const colors = require('tailwindcss/colors')
+const flowbite = require("flowbite-react/tailwind");
 
 module.exports = {
   important: true,
   content: [
     "./public/*.html",
     "./app/helpers/**/*.rb",
-    "./app/javascript/**/*.js",
+    "./app/javascript/**/*.{js,jsx}",
     "./app/views/**/*.{erb,haml,html,slim}",
     "./app/components/**/*.{erb,haml,html,slim}",
+    flowbite.content(),
   ],
   safelist: [
     "w-64",
@@ -74,5 +76,6 @@ module.exports = {
     require("@tailwindcss/forms"),
     require("@tailwindcss/typography"),
     require("@tailwindcss/container-queries"),
+    flowbite.plugin(),
   ],
 };

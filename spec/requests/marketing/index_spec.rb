@@ -41,7 +41,7 @@ RSpec.describe MarketingController, type: :controller do
         let(:role) { :member }
 
         it { expect(response).to have_http_status(:redirect) }
-        it { expect(response).to redirect_to(member_root_path) }
+        it { expect(response).to redirect_to(app_path) }
       end
     end
   end

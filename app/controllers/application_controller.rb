@@ -22,7 +22,7 @@ class ApplicationController < ActionController::Base
     return admin_root_path if current_user.admin?
     return teacher_root_path if current_user.teacher?
 
-    member_root_path
+    app_path
   end
 
   UserRoles.roles.each do |role|
