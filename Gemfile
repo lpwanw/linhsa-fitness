@@ -13,7 +13,6 @@ gem "faraday"
 gem "good_job"
 gem "inline_svg"
 gem "jbuilder"
-gem "jsbundling-rails"
 gem "pagy"
 gem "pg"
 gem "premailer-rails"
@@ -29,6 +28,8 @@ gem "tailwindcss-rails"
 gem "turbo-rails"
 gem "tzinfo-data", platforms: %i[ windows jruby ]
 gem "view_component"
+gem "vite_rails"
+gem "vite_ruby"
 gem "web-console"
 
 group :development, :test do
