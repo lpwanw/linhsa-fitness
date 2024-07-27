@@ -16,7 +16,8 @@ RSpec.describe ImportFile, type: :model do
         .with_values(
           created: "created",
           processing: "processing",
-          completed: "completed"
+          completed: "completed",
+          error: "error",
         ).backed_by_column_of_type(:string)
     end
   end

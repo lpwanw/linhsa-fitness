@@ -11,6 +11,7 @@ class ImportFile < ApplicationRecord
     created: "created",
     processing: "processing",
     completed: "completed",
+    error: "error",
   }
 
   validates :model, presence: true

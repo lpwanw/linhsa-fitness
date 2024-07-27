@@ -5,6 +5,7 @@ class Badge::ImportFile::Status < Badge::Component
     created: :yellow,
     processing: :blue,
     completed: :green,
+    error: :red,
   }.freeze
 
   def initialize(status:)
