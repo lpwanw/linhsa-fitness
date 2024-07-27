@@ -23,6 +23,8 @@ class Guest::ImportJob < ApplicationJob
     end
 
     import_file.completed!
+  rescue StandardError
+    @import_file.error!
   end
 
   private
