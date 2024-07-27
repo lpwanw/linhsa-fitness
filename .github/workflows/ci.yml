@@ -61,6 +61,10 @@ jobs:
         uses: ruby/setup-ruby@55283cc23133118229fd3f97f9336ee23a179fcf # v1.146.0
         with:
           bundler-cache: true
+      - name: prebuilt
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
       - name: Run rubocop
         run: bundle exec rubocop
       - name: Run rails_best_practices
@@ -69,3 +73,20 @@ jobs:
         run: bundle exec erblint --lint-all
       - name: Run brakeman
         run: bundle exec brakeman
+
+  eslint:
+    runs-on: ubuntu-latest
+    env:
+      RAILS_ENV: development
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      # Add or replace dependency steps here
+      - name: prebuilt
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+      - name: Install packages
+        run: yarn
+      - name: Run eslint
+        run: yarn lint
