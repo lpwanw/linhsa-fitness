@@ -2,6 +2,7 @@
 
 class Api::BaseController < ApplicationController
   before_action :authenticate_api_user!
+  after_action :add_pagy
 
   private
 
@@ -14,5 +15,13 @@ class Api::BaseController < ApplicationController
 
   def json_response(data, status: :ok)
     render json: { data:, success: true }, status:
+  end
+
+  def collection_serializer(collection, each_serializer)
+    ActiveModelSerializers::SerializableResource.new(collection, each_serializer:)
+  end
+
+  def add_pagy
+    pagy_headers_merge(@pagy) if @pagy
   end
 end
