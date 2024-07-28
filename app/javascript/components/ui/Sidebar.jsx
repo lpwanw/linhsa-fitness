@@ -4,8 +4,8 @@ import {Drawer, Sidebar} from "flowbite-react";
 import RoleDropdown from "./RoleDropdown";
 import LanguageDropdown from "./LanguageDropdown";
 import {Role} from "../../utils/role";
-import {useRole} from "../context";
 import {Link} from "react-router-dom";
+import {useUserContext} from "../UserContext";
 
 const AdminSidebarItems = () => {
   return (
@@ -20,7 +20,7 @@ const AdminSidebarItems = () => {
 }
 
 const SidebarContent = () => {
-  const { role, _ } = useRole();
+  const { role } = useUserContext();
 
   return(
     <>
