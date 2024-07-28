@@ -28,11 +28,10 @@ const Layout = () => {
         <UserProvider>
           <div className="flex h-screen flex-col bg-white dark:bg-gray-900">
             <Topbar onSidebarOpen={() => setIsSidebarOpen(true)}/>
-            <div className="flex w-full">
-              <div>
-                <Sidebar open={isSidebarOpen} onClose={handleSidebarClose}/>
-              </div>
-              <main className="grow p-4">
+            <div className="flex w-full h-full">
+              <Sidebar open={isSidebarOpen} onClose={handleSidebarClose}/>
+
+              <main className="grow p-4 overflow-y-auto">
                 <Outlet/>
               </main>
             </div>
