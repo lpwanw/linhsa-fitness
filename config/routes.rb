@@ -34,4 +34,8 @@ Rails.application.routes.draw do
   namespace :teacher do
     get "/", to: "dashboard#index", as: :root
   end
+
+  namespace :api do
+    resources :me, only: %i[index]
+  end
 end
