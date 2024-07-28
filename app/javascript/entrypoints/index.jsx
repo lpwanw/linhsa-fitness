@@ -26,6 +26,7 @@
 import React from "react"
 import {createRoot} from "react-dom/client";
 import App from "../components/App";
+import '../utils/i18n';
 
 const root = createRoot(
   document.body.appendChild(document.createElement("div"))
