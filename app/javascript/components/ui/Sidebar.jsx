@@ -2,36 +2,38 @@ import React from "react";
 import {HiArrowSmRight, HiChartPie, HiInbox, HiShoppingBag, HiTable, HiUser, HiViewBoards} from "react-icons/hi";
 import {Drawer, Sidebar} from "flowbite-react";
 import RoleDropdown from "./RoleDropdown";
+import LanguageDropdown from "./LanguageDropdown";
+import {Role} from "../../utils/role";
+import {useRole} from "../context";
+import {Link} from "react-router-dom";
+
+const AdminSidebarItems = () => {
+  return (
+    <>
+      <Sidebar.Item icon={HiChartPie} as="div">
+        <Link to="management/users">
+          Management
+        </Link>
+      </Sidebar.Item>
+    </>
+  )
+}
 
 const SidebarContent = () => {
+  const { role, _ } = useRole();
+
   return(
-    <Sidebar className="h-full w-48" aria-label="Default sidebar example">
-      <Sidebar.Items >
-        <Sidebar.ItemGroup className="rounded-none">
-          <Sidebar.Item href="#" icon={HiChartPie}>
-            Dashboard
-          </Sidebar.Item>
-          <Sidebar.Item href="#" icon={HiViewBoards} label="Pro" labelColor="dark">
-            Kanban
-          </Sidebar.Item>
-          <Sidebar.Item href="#" icon={HiInbox} label="3">
-            Inbox
-          </Sidebar.Item>
-          <Sidebar.Item href="#" icon={HiUser}>
-            Users
-          </Sidebar.Item>
-          <Sidebar.Item href="#" icon={HiShoppingBag}>
-            Products
-          </Sidebar.Item>
-          <Sidebar.Item href="#" icon={HiArrowSmRight}>
-            Sign In
-          </Sidebar.Item>
-          <Sidebar.Item href="#" icon={HiTable}>
-            Sign Up
-          </Sidebar.Item>
-        </Sidebar.ItemGroup>
-      </Sidebar.Items>
-    </Sidebar>
+    <>
+      <LanguageDropdown />
+      <RoleDropdown />
+      <Sidebar className="h-full w-48 mt-2" aria-label="Default sidebar example">
+        <Sidebar.Items >
+          <Sidebar.ItemGroup className="rounded-none">
+            { role === Role.admin ? <AdminSidebarItems /> : null}
+          </Sidebar.ItemGroup>
+        </Sidebar.Items>
+      </Sidebar>
+    </>
   )
 }
 
@@ -45,7 +47,6 @@ export default ({open, onClose}) => {
       <Drawer open={open} className="md:hidden" onClose={onClose} position="right">
         <Drawer.Header title="MENU" titleIcon={() => <></>} />
         <Drawer.Items>
-          <RoleDropdown />
           <SidebarContent />
         </Drawer.Items>
       </Drawer>
