@@ -1,10 +1,13 @@
 import React, { createContext, useState, useContext } from 'react';
-import {Role} from "../utils/role";
+import {getHighestRole, Role} from "../utils/role";
+import {useUserContext} from "./UserContext";
 
 const RoleContext = createContext();
 
 export const RoleProvider = ({ children }) => {
-  const [role, setRole] = useState(Role.member);
+  const { user } = useUserContext();
+  const [role, setRole] = useState(getHighestRole(user));
+
   return (
     <RoleContext.Provider value={{ role, setRole }}>
       {children}

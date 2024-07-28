@@ -3,12 +3,12 @@ import {Button, Dropdown} from "flowbite-react";
 import {Role} from "../../utils/role";
 import {IoIosArrowDown} from "react-icons/io";
 import {cn} from "../../utils";
-import {useRole} from "../context";
 import {useTranslation} from "react-i18next";
+import {useUserContext} from "../UserContext";
 
 export default ({className}) => {
+  const { user, role, setRole } = useUserContext();
   const { t } = useTranslation('role');
-  const { role, setRole } = useRole();
 
   const trigger = () => {
     return(
@@ -24,9 +24,11 @@ export default ({className}) => {
   return (
     <div className={cn("w-full flex justify-center items-center px-4 pt-2", className)}>
       <Dropdown label={""} renderTrigger={trigger} >
-        <Dropdown.Item onClick={() => setRole(Role.admin)}>{t(Role.admin)}</Dropdown.Item>
-        <Dropdown.Item onClick={() => setRole(Role.teacher)}>{t(Role.teacher)}</Dropdown.Item>
-        <Dropdown.Item onClick={() => setRole(Role.member)}>{t(Role.member)}</Dropdown.Item>
+        {
+          user.roles.map((role) => {
+            return <Dropdown.Item key={role} onClick={() => setRole(role)}>{t(role)}</Dropdown.Item>
+          })
+        }
       </Dropdown>
     </div>
   );
