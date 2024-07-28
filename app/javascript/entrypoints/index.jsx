@@ -22,16 +22,13 @@
 
 // Example: Import a stylesheet in app/frontend/index.css
 // import '~/index.css'
-import "@hotwired/turbo-rails";
 
 import React from "react"
 import {createRoot} from "react-dom/client";
 import App from "../components/App";
 
-document.addEventListener("turbo:load", () => {
-  const root = createRoot(
-    document.body.appendChild(document.createElement("div"))
-  );
-  root.render(<App />);
-});
+const root = createRoot(
+  document.body.appendChild(document.createElement("div"))
+);
+root.render(<App />);
 

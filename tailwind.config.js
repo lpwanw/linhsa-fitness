@@ -1,4 +1,3 @@
-const defaultTheme = require("tailwindcss/defaultTheme");
 const colors = require('tailwindcss/colors')
 const flowbite = require("flowbite-react/tailwind");
 
