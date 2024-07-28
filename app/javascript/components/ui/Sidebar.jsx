@@ -1,10 +1,11 @@
 import React from "react";
 import {HiArrowSmRight, HiChartPie, HiInbox, HiShoppingBag, HiTable, HiUser, HiViewBoards} from "react-icons/hi";
 import {Drawer, Sidebar} from "flowbite-react";
+import RoleDropdown from "./RoleDropdown";
 
 const SidebarContent = () => {
   return(
-    <Sidebar className="h-full" aria-label="Default sidebar example">
+    <Sidebar className="h-full w-48" aria-label="Default sidebar example">
       <Sidebar.Items >
         <Sidebar.ItemGroup className="rounded-none">
           <Sidebar.Item href="#" icon={HiChartPie}>
@@ -44,6 +45,7 @@ export default ({open, onClose}) => {
       <Drawer open={open} className="md:hidden" onClose={onClose} position="right">
         <Drawer.Header title="MENU" titleIcon={() => <></>} />
         <Drawer.Items>
+          <RoleDropdown />
           <SidebarContent />
         </Drawer.Items>
       </Drawer>
