@@ -1,10 +1,16 @@
-import React from "react"
-import {Spinner} from "flowbite-react";
+import React from "react";
+import { Spinner } from "flowbite-react";
+import { cn } from "../../utils";
 
-export function LoadingPage() {
+export function LoadingScreen({ className }) {
   return (
-    <div className="fixed top-0 left-0 w-screen h-screen z-[9999]">
-      <Spinner aria-label="Spinner button example" size="sm" />
+    <div
+      className={cn(
+        "w-full h-full flex justify-center items-center dark:bg-gray-900",
+        className,
+      )}
+    >
+      <Spinner aria-label="Spinner button example" size="xl" />
     </div>
-  )
+  );
 }

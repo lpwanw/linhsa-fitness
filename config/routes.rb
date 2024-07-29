@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-Rails.application.routes.draw do
+Rails.application.routes.draw do # rubocop:disable Metrics/BlockLength
   mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
   get "up" => "rails/health#show", as: :rails_health_check
   authenticate :user, ->(user) { user.admin? } do
@@ -36,6 +36,10 @@ Rails.application.routes.draw do
   end
 
   namespace :api do
+    namespace :admin do
+      resources :users, only: %i[index]
+    end
+
     resources :me, only: %i[index]
   end
 end
