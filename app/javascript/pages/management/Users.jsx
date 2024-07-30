@@ -1,13 +1,32 @@
-import React, { Suspense, useState } from "react";
-import { Card, FloatingLabel, Pagination, Table } from "flowbite-react";
-import { useQuery, useSuspenseQuery } from "@tanstack/react-query";
-import { getUsersByAdmin } from "../../api/admin/users";
-import useDebounce from "../../hooks/useDebounce";
+import React, { Suspense, useEffect, useState } from "react";
+import { FloatingLabel, Pagination, Table } from "flowbite-react";
+import { useSuspenseQuery } from "@tanstack/react-query";
+import { getUsersByAdmin } from "@api/admin/users";
+import useDebounce from "@hooks/useDebounce";
+import { useSearchParams } from "react-router-dom";
+import SortButton from "@ui/button/SortButton";
 
-const UserHeader = () => {
+const UserHeader = ({}) => {
+  const [searchParams, setSearchParams] = useSearchParams();
+
+  const sortId = searchParams.get("s[id]") || "asc";
+  const onSortClick = (attribute) => {
+    setSearchParams((prev) => {
+      const key = `s[${attribute}]`;
+      const direction = searchParams.get(key) || "asc";
+      prev.set(key, direction === "asc" ? "desc" : "asc");
+      prev.set("page", 1);
+      return prev;
+    });
+  };
+
   return (
     <Table.Head>
-      <Table.HeadCell>Id</Table.HeadCell>
+      <Table.HeadCell>
+        <SortButton direction={sortId} onClick={() => onSortClick("id")}>
+          Id
+        </SortButton>
+      </Table.HeadCell>
       <Table.HeadCell>Email</Table.HeadCell>
       <Table.HeadCell>Roles</Table.HeadCell>
       <Table.HeadCell>
@@ -38,12 +57,19 @@ const UserRow = ({ user }) => {
 };
 
 const UserTableContent = ({ currentPage, searchParams, setTotalPages }) => {
+  const [sortParams, setSortParams] = useSearchParams();
+  const sortId = sortParams.get("s[id]") || "asc";
+
   const {
     data: { users, pages },
   } = useSuspenseQuery({
     queryKey: [
       "admin_users",
-      { page: currentPage, searchParams: searchParams },
+      {
+        page: currentPage,
+        searchParams: searchParams,
+        sortParams: { id: sortId },
+      },
     ],
     queryFn: getUsersByAdmin,
   });
@@ -92,12 +118,33 @@ const Placeholder = () => {
 };
 
 export default function UserPages() {
-  const [currentPage, setCurrentPage] = useState(1);
-  const [totalPages, setTotalPages] = useState(1);
-  const [searchParams, setSearchParams] = useState({ email: "" });
-  const debounceSearchParams = useDebounce(searchParams, 300);
+  const [searchParams, setSearchParams] = useSearchParams();
+  const [email, setEmail] = useState(searchParams.get("email") || "");
 
-  const onPageChange = (page) => setCurrentPage(page);
+  const currentPage = parseInt(searchParams.get("page") || "1", 10);
+  const [totalPages, setTotalPages] = useState(1);
+  const debouncedEmail = useDebounce(email, 300);
+
+  const onPageChange = (page) => {
+    setSearchParams((prev) => {
+      prev.set("page", page.toString());
+      return prev;
+    });
+  };
+
+  const onEmailChange = (e) => {
+    setEmail(e.target.value);
+  };
+
+  useEffect(() => {
+    setSearchParams((prev) => {
+      if (debouncedEmail !== prev.get("email")) {
+        prev.set("email", debouncedEmail);
+        prev.set("page", 1);
+      }
+      return prev;
+    });
+  }, [debouncedEmail, setSearchParams]);
 
   return (
     <div>
@@ -105,10 +152,8 @@ export default function UserPages() {
         <FloatingLabel
           variant="outlined"
           label="Search"
-          value={searchParams.email}
-          onChange={(e) =>
-            setSearchParams((params) => ({ ...params, email: e.target.value }))
-          }
+          value={email}
+          onChange={onEmailChange}
         />
       </div>
       <div className="overflow-x-auto">
@@ -118,7 +163,7 @@ export default function UserPages() {
             <UserTableContent
               currentPage={currentPage}
               setTotalPages={setTotalPages}
-              searchParams={debounceSearchParams}
+              searchParams={{ email: debouncedEmail }}
             />
           </Suspense>
         </Table>
@@ -129,6 +174,9 @@ export default function UserPages() {
           currentPage={currentPage}
           totalPages={totalPages}
           onPageChange={onPageChange}
+          previousLabel=""
+          nextLabel=""
+          showIcons
         />
       </div>
     </div>

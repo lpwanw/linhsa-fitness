@@ -1,6 +1,6 @@
 import React from "react";
 import { Spinner } from "flowbite-react";
-import { cn } from "../../utils";
+import { cn } from "@utils";
 
 export function LoadingScreen({ className }) {
   return (

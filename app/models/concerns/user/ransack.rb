@@ -5,7 +5,7 @@ module User::Ransack
 
   included do
     def self.ransackable_attributes(_auth_object = nil)
-      ["email"]
+      %w[id email]
     end
 
     def self.ransackable_associations(_auth_object = nil)

@@ -3,12 +3,11 @@
 require "rails_helper"
 
 RSpec.describe UserSerializer do
-  subject(:json) { serializer.to_hash }
+  subject(:json) { serializer.as_json }
 
   let(:user) { create(:user) }
   let(:serializer) { described_class.new user }
 
-  it { expect(json[:id]).to eq user.id }
   it { expect(json[:email]).to eq user.email }
 
   context "when user have member" do

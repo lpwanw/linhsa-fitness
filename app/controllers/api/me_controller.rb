@@ -2,6 +2,6 @@
 
 class Api::MeController < Api::BaseController
   def index
-    json_response UserSerializer.new(current_user)
+    render json: current_user
   end
 end

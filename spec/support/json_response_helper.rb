@@ -9,11 +9,7 @@ module JsonResponseHelper
     json_body[:data]
   end
 
-  def json_success
-    json_body[:success]
-  end
-
-  def json_errors
-    json_body[:errors]
+  def json_attribute
+    json_data[:attributes]
   end
 end

@@ -23,25 +23,25 @@ RSpec.describe Api::MeController, type: :controller do
       end
 
       context "when user have member" do
-        it { expect(json_data[:id]).to eq current_user.id }
-        it { expect(json_data[:email]).to eq current_user.email }
-        it { expect(json_data[:roles]).to eq ["member"] }
+        it { expect(json_data[:id]).to eq current_user.id.to_s }
+        it { expect(json_attribute[:email]).to eq current_user.email }
+        it { expect(json_attribute[:roles]).to eq ["member"] }
       end
 
       context "when user have admin role" do
         let(:current_user) { create(:user, :admin) }
 
-        it { expect(json_data[:id]).to eq current_user.id }
-        it { expect(json_data[:email]).to eq current_user.email }
-        it { expect(json_data[:roles]).to eq %w[member admin] }
+        it { expect(json_data[:id]).to eq current_user.id.to_s }
+        it { expect(json_attribute[:email]).to eq current_user.email }
+        it { expect(json_attribute[:roles]).to eq %w[member admin] }
       end
 
       context "when user have teacher role" do
         let(:current_user) { create(:user, :teacher) }
 
-        it { expect(json_data[:id]).to eq current_user.id }
-        it { expect(json_data[:email]).to eq current_user.email }
-        it { expect(json_data[:roles]).to eq %w[member teacher] }
+        it { expect(json_data[:id]).to eq current_user.id.to_s }
+        it { expect(json_attribute[:email]).to eq current_user.email }
+        it { expect(json_attribute[:roles]).to eq %w[member teacher] }
       end
     end
   end
