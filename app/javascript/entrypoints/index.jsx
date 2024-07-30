@@ -23,13 +23,12 @@
 // Example: Import a stylesheet in app/frontend/index.css
 // import '~/index.css'
 
-import React from "react"
-import {createRoot} from "react-dom/client";
-import App from "../components/App";
-import '../utils/i18n';
+import React from "react";
+import { createRoot } from "react-dom/client";
+import App from "@pages/App";
+import "@utils/i18n";
 
 const root = createRoot(
-  document.body.appendChild(document.createElement("div"))
+  document.body.appendChild(document.createElement("div")),
 );
 root.render(<App />);
-

@@ -1,7 +1,8 @@
 import {defineConfig} from 'vite'
 import ViteRails from "vite-plugin-rails"
-import FullReload from 'vite-plugin-full-reload'
+import {resolve} from "path";
 
+// @ts-ignore
 export default defineConfig({
   clearScreen: false,
   plugins: [
@@ -12,4 +13,14 @@ export default defineConfig({
       }
     }),
   ],
+  resolve: {
+    alias: {
+      '@utils': resolve(__dirname, 'app/javascript/utils'),
+      '@routes': resolve(__dirname, 'app/javascript/routes'),
+      '@hooks': resolve(__dirname, 'app/javascript/hooks'),
+      '@pages': resolve(__dirname, 'app/javascript/pages'),
+      '@ui': resolve(__dirname, 'app/javascript/ui'),
+      '@api': resolve(__dirname, 'app/javascript/api')
+    }
+  }
 })

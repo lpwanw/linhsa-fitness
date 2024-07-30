@@ -1,12 +1,12 @@
 import React, { Suspense, useState } from "react";
 import { Outlet } from "react-router-dom";
-import Sidebar from "./ui/Sidebar";
-import Topbar from "./ui/Topbar";
+import Sidebar from "@ui/Sidebar";
+import Topbar from "@ui/Topbar";
 import { I18nextProvider } from "react-i18next";
-import i18n from "../utils/i18n";
-import { UserProvider } from "./UserContext";
+import i18n from "@utils/i18n";
+import { UserProvider } from "@pages/UserContext";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { LoadingScreen } from "./ui/Loading";
+import { LoadingScreen } from "@ui/Loading";
 
 const queryClient = new QueryClient({
   defaultOptions: {

@@ -1,10 +1,10 @@
 import React, { lazy } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Home from "../components/Home";
-import Layout from "../components/Layout";
+import Home from "@pages/Home";
+import Layout from "@pages/Layout";
 import NotFound from "./NotFound";
 
-const Users = lazy(() => import("../components/management/Users"));
+const Users = lazy(() => import("@pages/management/Users"));
 
 export default (
   <Router basename={"/app"}>

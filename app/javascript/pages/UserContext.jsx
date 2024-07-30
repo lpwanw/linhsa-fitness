@@ -1,8 +1,8 @@
-import React, { createContext, useState, useContext, useEffect } from "react";
-import { getMe } from "../api/me";
-import { LoadingScreen } from "./ui/Loading";
+import React, { createContext, useState, useContext } from "react";
+import { getMe } from "@api/me";
+import { LoadingScreen } from "@ui/Loading";
 import { useQuery } from "@tanstack/react-query";
-import { getHighestRole } from "../utils/role";
+import { getHighestRole } from "@utils/role";
 
 const UserContext = createContext();
 

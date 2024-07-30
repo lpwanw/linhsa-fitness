@@ -1,4 +1,4 @@
-import { makeHttpClient, parseData } from "./factory";
+import { makeHttpClient, parseData } from "@api/factory";
 
 const { getJSON } = makeHttpClient({
   baseUrl: "/api",
