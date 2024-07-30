@@ -60,7 +60,7 @@ RSpec.describe User, type: :model do
     describe ".ransackable_attributes" do
       subject { described_class.ransackable_attributes }
 
-      it { is_expected.to eq %w[email] }
+      it { is_expected.to eq %w[id email] }
     end
 
     describe ".ransackable_associations" do

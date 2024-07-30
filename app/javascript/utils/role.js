@@ -2,16 +2,15 @@ export const Role = {
   admin: "admin",
   member: "member",
   teacher: "teacher",
-}
+};
 
 export const getHighestRole = (user) => {
   if (!user) {
-    return Role.member
+    return Role.member;
   }
+  const role = [Role.admin, Role.member, Role.member].find((role) => {
+    return user.roles.includes(role);
+  });
 
-  const role =  [Role.admin, Role.member, Role.member].find((role) => {
-    return user.roles.includes(role)
-  })
-
-  return role || Role.member
-}
+  return role || Role.member;
+};

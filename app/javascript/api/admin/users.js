@@ -1,4 +1,4 @@
-import { makeHttpClient } from "../factory";
+import { makeHttpClient, parseCollection } from "../factory";
 import { getPageFromHeaders } from "../pagy";
 
 const { getJSON } = makeHttpClient({
@@ -12,10 +12,13 @@ export const getUsersByAdmin = async ({ queryKey }) => {
   };
   const { email } = searchParams || { email: "" };
   const q = `q[email_cont]=${email}`;
-  const { data, headers } = await getJSON(`?${q}&page=${page}`);
+  const {
+    data: { data },
+    headers,
+  } = await getJSON(`?${q}&page=${page}`);
 
   return {
-    users: data.data,
+    users: parseCollection(data),
     pages: getPageFromHeaders(headers),
   };
 };

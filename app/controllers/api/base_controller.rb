@@ -17,10 +17,6 @@ class Api::BaseController < ApplicationController
     render json: { data:, success: true }, status:
   end
 
-  def collection_serializer(collection, each_serializer)
-    ActiveModelSerializers::SerializableResource.new(collection, each_serializer:)
-  end
-
   def add_pagy
     pagy_headers_merge(@pagy) if @pagy
   end
