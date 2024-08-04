@@ -8,17 +8,21 @@ const { getJSON } = makeHttpClient({
 export const getUsersByAdmin = async ({ queryKey }) => {
   const { page, searchParams, sortParams } = queryKey[1] || {
     page: 1,
-    searchParams: { email: "" },
+    searchParams: { email: "", roles: [] },
     sortParams: {
       id: "asc",
     },
   };
-  const q = searchParams.email ? `q[email_cont]=${searchParams.email}` : "";
-  const s = sortParams.id ? `q[s]=id+${sortParams.id}` : "";
+  const params = {
+    "q[email_cont]": searchParams.email || "",
+    "q[roles_name_in]": searchParams.roles,
+    "q[s]": "id " + (sortParams.id || ""),
+    page: page,
+  };
   const {
     data: { data },
     headers,
-  } = await getJSON(`?${q}&${s}&page=${page}`);
+  } = await getJSON("", params);
 
   return {
     users: parseCollection(data),

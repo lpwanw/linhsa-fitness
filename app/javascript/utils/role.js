@@ -4,11 +4,13 @@ export const Role = {
   teacher: "teacher",
 };
 
+export const UserRole = [Role.admin, Role.teacher, Role.member];
+
 export const getHighestRole = (user) => {
   if (!user) {
     return Role.member;
   }
-  const role = [Role.admin, Role.member, Role.member].find((role) => {
+  const role = UserRole.find((role) => {
     return user.roles.includes(role);
   });
 

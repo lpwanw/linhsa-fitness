@@ -1,21 +1,47 @@
-import React, { Suspense, useEffect, useState } from "react";
-import { FloatingLabel, Pagination, Table } from "flowbite-react";
+import React, { Children, Suspense, useEffect, useState } from "react";
+import {
+  Checkbox,
+  Dropdown,
+  FloatingLabel,
+  Pagination,
+  Table,
+} from "flowbite-react";
 import { useSuspenseQuery } from "@tanstack/react-query";
 import { getUsersByAdmin } from "@api/admin/users";
 import useDebounce from "@hooks/useDebounce";
 import { useSearchParams } from "react-router-dom";
 import SortButton from "@ui/button/SortButton";
+import { UserRole } from "@utils/role";
+import { HiFilter } from "react-icons/hi";
+import { isEmpty } from "lodash";
 
 const UserHeader = ({}) => {
   const [searchParams, setSearchParams] = useSearchParams();
 
   const sortId = searchParams.get("s[id]") || "asc";
+  const roles = (searchParams.get("roles")?.split(",") || []).filter(
+    (item) => !isEmpty(item),
+  );
   const onSortClick = (attribute) => {
     setSearchParams((prev) => {
       const key = `s[${attribute}]`;
       const direction = searchParams.get(key) || "asc";
       prev.set(key, direction === "asc" ? "desc" : "asc");
       prev.set("page", 1);
+      return prev;
+    });
+  };
+
+  const onRoleFilterClick = (role) => {
+    const index = roles.indexOf(role);
+    if (index > -1) {
+      roles.splice(index, 1);
+    } else {
+      roles.push(role);
+    }
+
+    setSearchParams((prev) => {
+      prev.set("roles", roles.join(","));
       return prev;
     });
   };
@@ -28,7 +54,38 @@ const UserHeader = ({}) => {
         </SortButton>
       </Table.HeadCell>
       <Table.HeadCell>Email</Table.HeadCell>
-      <Table.HeadCell>Roles</Table.HeadCell>
+      <Table.HeadCell>
+        <Dropdown
+          label=""
+          renderTrigger={() => {
+            return (
+              <div className="relative flex gap-0.5 justify-center items-center w-fit">
+                <HiFilter className="mr-2 h-5 w-5" />
+                Roles
+                {isEmpty(roles) ? null : (
+                  <div className="absolute inline-flex items-center justify-center w-5 h-5 text-xs text-white rounded-full top-1.2 start-2">
+                    {roles.length}
+                  </div>
+                )}
+              </div>
+            );
+          }}
+        >
+          {Children.toArray(
+            UserRole.map((role) => {
+              return (
+                <Dropdown.Item className={"flex gap-2"}>
+                  <Checkbox
+                    onClick={() => onRoleFilterClick(role)}
+                    checked={roles.includes(role)}
+                  />
+                  {role}
+                </Dropdown.Item>
+              );
+            }),
+          )}
+        </Dropdown>
+      </Table.HeadCell>
       <Table.HeadCell>
         <span className="sr-only">Edit</span>
       </Table.HeadCell>
@@ -56,9 +113,18 @@ const UserRow = ({ user }) => {
   );
 };
 
-const UserTableContent = ({ currentPage, searchParams, setTotalPages }) => {
-  const [sortParams, setSortParams] = useSearchParams();
-  const sortId = sortParams.get("s[id]") || "asc";
+const UserTableContent = ({ setTotalPages }) => {
+  const [searchParams, _] = useSearchParams();
+
+  const apiSearchParams = {
+    email: searchParams.get("email") || "",
+    roles: (searchParams.get("roles") || "").split(","),
+  };
+  const sortParams = {
+    id: searchParams.get("s[id]") || "asc",
+  };
+
+  const currentPage = parseInt(searchParams.get("page") || "1", 10);
 
   const {
     data: { users, pages },
@@ -67,8 +133,8 @@ const UserTableContent = ({ currentPage, searchParams, setTotalPages }) => {
       "admin_users",
       {
         page: currentPage,
-        searchParams: searchParams,
-        sortParams: { id: sortId },
+        searchParams: apiSearchParams,
+        sortParams: sortParams,
       },
     ],
     queryFn: getUsersByAdmin,
@@ -156,15 +222,11 @@ export default function UserPages() {
           onChange={onEmailChange}
         />
       </div>
-      <div className="overflow-x-auto">
+      <div className="overflow-x-auto min-h-[564px]">
         <Table>
           <UserHeader />
           <Suspense fallback={<Placeholder />}>
-            <UserTableContent
-              currentPage={currentPage}
-              setTotalPages={setTotalPages}
-              searchParams={{ email: debouncedEmail }}
-            />
+            <UserTableContent setTotalPages={setTotalPages} />
           </Suspense>
         </Table>
       </div>
