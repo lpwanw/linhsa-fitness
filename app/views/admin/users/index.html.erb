@@ -40,7 +40,7 @@
             <div id="filterDropdown" class="z-10 hidden w-48 p-3 bg-white rounded-lg shadow dark:bg-gray-700">
               <h6 class="mb-3 text-sm font-medium text-gray-900 dark:text-white"><%= t "copy.Choose role" %></h6>
               <ul class="space-y-2 text-sm" aria-labelledby="filterDropdownButton">
-                <% UserRoles.roles.each do |role| %>
+                <% UserRoles.roles.each_with_index do |role, index| %>
                   <li class="flex items-center">
                     <%= check_box_tag(
                           "q[roles_name_in][]",
@@ -48,7 +48,8 @@
                           params.dig(:q, :roles_name_in)&.include?(role.to_s),
                           class: "checked:ring-primary-500 w-4 h-4 bg-gray-100 border-gray-300 rounded text-primary-600
                           focus:ring-primary-500 dark:focus:ring-primary-600 dark:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500",
-                          onclick: "this.form.submit()"
+                          onclick: "this.form.submit()",
+                          id: "q[roles_name_in][]#{index}"
                         ) %>
                     <span class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-100"> <%= t("roles.#{role}") %></span>
                   </li>

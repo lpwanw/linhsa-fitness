@@ -7,6 +7,9 @@ import { application } from "./application"
 import DarkController from "./dark_controller"
 application.register("dark", DarkController)
 
+import DrawerController from "./drawer_controller"
+application.register("drawer", DrawerController)
+
 import Flash__ComponentController from "./flash/component_controller"
 application.register("flash--component", Flash__ComponentController)
 
