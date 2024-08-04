@@ -25,10 +25,9 @@ Rails.application.routes.draw do # rubocop:disable Metrics/BlockLength
 
     resources :users, only: %i[index]
     resources :guests, only: %i[index]
-
     resources :import_guests, only: %i[index show new create]
-
     resource :console, controller: :console, only: %i[show]
+    resources :courses, only: %i[new create]
   end
 
   namespace :teacher do

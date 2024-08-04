@@ -11,5 +11,5 @@ class Course < ApplicationRecord
   has_many :lessons, dependent: :delete_all
 
   validates :name, presence: true
-  validates :name, length: { minimum: 3, maximum: 255 }
+  validates :name, length: { minimum: 3, maximum: 255 }, allow_blank: true
 end
