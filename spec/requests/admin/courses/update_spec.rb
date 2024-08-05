@@ -12,7 +12,7 @@ RSpec.describe Admin::CoursesController, type: :controller do
         course: {
           name:,
         },
-        id:
+        id:,
       }
     end
     let(:name) { FFaker::Company.name }
