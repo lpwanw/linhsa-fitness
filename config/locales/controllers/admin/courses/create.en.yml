@@ -1,0 +1,6 @@
+---
+en:
+  admin:
+    courses:
+      create:
+        success: Success

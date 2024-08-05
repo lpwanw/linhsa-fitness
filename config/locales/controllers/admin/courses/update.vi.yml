@@ -1,0 +1,7 @@
+---
+vi:
+  admin:
+    courses:
+      update:
+        Failed: Có lỗi xảy ra
+        Success: Cập nhật thành công

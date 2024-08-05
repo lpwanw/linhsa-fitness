@@ -1,0 +1,3 @@
+<%= render_turbo_flash_messages %>
+
+<%= turbo_stream.replace turbo_frame_request_id, partial: "show_#{turbo_frame_request_id}", locals: { course: @course } %>

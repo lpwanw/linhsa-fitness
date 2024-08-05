@@ -1,0 +1,3 @@
+<%= turbo_frame_tag :name do %>
+  <%= f.text_field :name, onfocusout: "this.form.requestSubmit()", autofocus: true %>
+<% end %>

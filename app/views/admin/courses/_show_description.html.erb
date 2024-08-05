@@ -1,0 +1,5 @@
+<%= turbo_frame_tag :description do %>
+  <p class="text-lg">
+    <%= link_to course.description.presence || "Click me to update description", edit_admin_course_path(course) %>
+  </p>
+<% end %>

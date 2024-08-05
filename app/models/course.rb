@@ -12,4 +12,9 @@ class Course < ApplicationRecord
 
   validates :name, presence: true
   validates :name, length: { minimum: 3, maximum: 255 }, allow_blank: true
+  validates :name, uniqueness: true
+
+  accepts_nested_attributes_for :lessons
+
+  delegate :email, to: :creator, allow_nil: true, prefix: true
 end

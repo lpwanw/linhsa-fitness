@@ -1,0 +1,59 @@
+<%= render "layout" do %>
+<div class="mb-4 border-gray-200 dark:border-gray-700 flex justify-between">
+  <ul class="flex flex-wrap -mb-px text-sm font-medium text-center" id="default-tab" data-tabs-toggle="#default-tab-content" role="tablist">
+    <li class="me-2" role="presentation">
+      <button class="inline-block p-4 border-b-2 rounded-t-lg" id="course-tab" data-tabs-target="#course" type="button" role="tab" aria-controls="course" aria-selected="false">
+        Course Overview
+      </button>
+    </li>
+    <li class="me-2" role="presentation">
+      <button class="inline-block p-4 border-b-2 rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300" id="lessons-tab" data-tabs-target="#lessons" type="button" role="tab" aria-controls="lessons" aria-selected="false">lessons</button>
+    </li>
+  </ul>
+</div>
+<div id="default-tab-content">
+  <div class="hidden  p-4 rounded-lg bg-gray-50 dark:bg-gray-800" id="course" role="tabpanel" aria-labelledby="course-tab">
+    <div class="grid grid-cols-[150px_1fr] gap-4">
+      <p>Name</p>
+      <%= render "show_name", course: @course %>
+      <p>Description</p>
+      <%= render "show_description", course: @course %>
+
+      <p>Created by</p> <p><%= @course.creator_email %></p>
+    </div>
+  </div>
+  <div class="hidden  bg-gray-50 dark:bg-gray-800" id="lessons" role="tabpanel" aria-labelledby="lessons-tab">
+    <div class="relative overflow-x-auto rounded-lg">
+      <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+        <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+        <tr>
+          <th scope="col" class="px-6 py-3">
+            Name
+          </th>
+          <th scope="col" class="px-6 py-3">
+            Content
+          </th>
+          <th scope="col" class="px-6 py-3">
+            <span class="sr-only">Action</span>
+          </th>
+        </tr>
+        </thead>
+        <tbody class="divide-y-1">
+        <% @course.lessons.each do |lesson| %>
+          <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+            <%= lesson.name %>
+          </th>
+          <td class="px-6 py-4">
+            <%= lesson.content %>
+          </td>
+          <td class="px-6 py-4">
+            Laptop
+          </td>
+        <% end %>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+</div>
+<% end %>
