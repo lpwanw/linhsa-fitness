@@ -1,0 +1,7 @@
+---
+en:
+  admin:
+    courses:
+      update:
+        Failed: Failed
+        Success: Success

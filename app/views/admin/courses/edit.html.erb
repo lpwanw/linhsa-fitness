@@ -1,0 +1,5 @@
+<%= turbo_frame_tag turbo_frame_request_id do %>
+  <%= form_for @course, url: admin_course_path(@course), html: { data: { turbo: true, turbo_stream: true } } do |f| %>
+    <%= render "inline_#{turbo_frame_request_id}_input", f: %>
+  <% end %>
+<% end %>
