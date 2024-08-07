@@ -42,4 +42,14 @@ class ApplicationController < ActionController::Base
 
     role
   end
+
+  def authenticate_turbo_frame_request!
+    return if turbo_frame_request?
+
+    render404
+  end
+
+  def render404
+    render file: Rails.public_path.join("404.html").to_s, layout: false, status: :not_found, formats: [:html]
+  end
 end
