@@ -3,7 +3,7 @@
 FactoryBot.define do
   factory :lesson do
     name { FFaker::Lorem.sentence }
-    description { FFaker::Lorem.paragraph }
+    content { FFaker::Lorem.paragraph }
     course
   end
 end

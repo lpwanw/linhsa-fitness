@@ -1,0 +1,7 @@
+---
+en:
+  admin:
+    lessons:
+      update:
+        Failed: Failed
+        Success: Success

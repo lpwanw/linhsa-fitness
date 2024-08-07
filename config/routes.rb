@@ -28,7 +28,7 @@ Rails.application.routes.draw do # rubocop:disable Metrics/BlockLength
     resources :import_guests, only: %i[index show new create]
     resource :console, controller: :console, only: %i[show]
     resources :courses, only: %i[show new create edit update] do
-      resources :lessons, only: %i[new create]
+      resources :lessons, only: %i[new create edit update]
     end
   end
 
