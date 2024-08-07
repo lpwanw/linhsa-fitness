@@ -5,7 +5,7 @@ require "rails_helper"
 RSpec.describe Course, type: :model do
   describe "associations" do
     it { is_expected.to belong_to(:creator).class_name("User").optional(true).inverse_of(:courses) }
-    it { is_expected.to have_many(:lessons).dependent(:delete_all) }
+    it { is_expected.to have_many(:lessons).dependent(:destroy) }
   end
 
   describe "enums" do
