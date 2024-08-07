@@ -1,0 +1,67 @@
+<div class="hidden space-y-2" id="course" role="tabpanel" aria-labelledby="course-tab">
+  <div class="grid rounded-lg grid-cols-[150px_1fr] gap-4 p-4 bg-gray-50 dark:bg-gray-800">
+    <p>Name</p>
+    <%= render "show_name", course: %>
+    <p>Description</p>
+    <%= render "show_description", course: %>
+
+    <p>Created by</p> <p><%= course.creator_email %></p>
+  </div>
+
+  <div class="relative overflow-x-auto rounded-lg">
+    <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+      <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+      <tr>
+        <th scope="col" class="px-6 py-3">
+          Name
+        </th>
+        <th scope="col" class="px-6 py-3">
+          Content
+        </th>
+        <th scope="col" class="px-6 py-1.5">
+          <%= link_to(
+                new_guest_path,
+                class: "group space-x-1",
+                data: {
+                  turbo_frame: "modal",
+                  "tooltip-target": "add-lesson-tooltip",
+                }
+              ) do %>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="50px"
+              height="50px"
+              viewBox="0 0 24 24"
+              class="h-6 w-6 group-hover:rotate-90 duration-300 stroke-zinc-400 fill-none group-active:stroke-zinc-200 group-active:fill-zinc-600">
+              <path
+                d="M12 22C17.5 22 22 17.5 22 12C22 6.5 17.5 2 12 2C6.5 2 2 6.5 2 12C2 17.5 6.5 22 12 22Z"
+                stroke-width="1.5"></path>
+              <path d="M8 12H16" stroke-width="1.5"></path>
+              <path d="M12 16V8" stroke-width="1.5"></path>
+            </svg>
+          <% end %>
+          <div id="add-lesson-tooltip" role="tooltip" class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
+            Add Lesson
+            <div class="tooltip-arrow" data-popper-arrow></div>
+          </div>
+        </th>
+      </tr>
+      </thead>
+      <tbody class="divide-y-1">
+      <% course.lessons.each do |lesson| %>
+        <tr class="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700">
+         <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+           <%= lesson.name %>
+          </th>
+          <td class="px-6 py-4">
+            <%= lesson.content.presence || "Content is empty" %>
+          </td>
+          <td class="px-6 py-4">
+            Edit
+          </td>
+        </tr>
+      <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

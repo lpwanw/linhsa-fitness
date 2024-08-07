@@ -234,7 +234,7 @@
           <span class="ml-3">Good Job Dashboard</span>
         <% end %>
 
-        <%= link_to admin_console_path, class: "flex items-center p-2 text-base font-medium text-gray-900 rounded-lg transition duration-75 hover:bg-gray-100 dark:hover:bg-gray-700 dark:text-white group" do %>
+        <%= link_to admin_console_path, data: { "turbo-prefetch": false }, class: "flex items-center p-2 text-base font-medium text-gray-900 rounded-lg transition duration-75 hover:bg-gray-100 dark:hover:bg-gray-700 dark:text-white group" do %>
           <svg
             aria-hidden="true"
             class="flex-shrink-0 w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
