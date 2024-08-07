@@ -1,0 +1,3 @@
+<%= render_turbo_flash_messages %>
+<%= turbo_stream.replace "modal", partial: "shared/empty_turbo_stream_tag", locals: { id: "modal" } %>
+<%= turbo_stream.append dom_id(@course), partial: "admin/courses/lesson", locals: { lesson: @lesson } %>
