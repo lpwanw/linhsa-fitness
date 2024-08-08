@@ -1,8 +1,9 @@
+@import "label.css";
+/*@import "input.css";*/
 @import "tailwindcss/base";
-
 @import "tailwindcss/components";
-
 @import "tailwindcss/utilities";
+@import "input.css";
 
 .pagy {
     @apply flex items-center -space-x-px h-8 text-sm justify-center;

@@ -1,0 +1,13 @@
+<%= render_turbo_flash_messages %>
+<% if @lesson.errors %>
+  <%= turbo_stream.replace "modal",
+                           partial: "admin/lessons/form",
+                           locals: {
+                             lesson: @lesson,
+                             title: "Create new lesson",
+                             url: admin_course_lessons_path
+                           } %>
+<% else %>
+  <%= turbo_stream.replace "modal", partial: "shared/empty_turbo_stream_tag", locals: { id: "modal" } %>
+  <%= turbo_stream.append dom_id(@course), partial: "admin/courses/lesson", locals: { lesson: @lesson } %>
+<% end %>

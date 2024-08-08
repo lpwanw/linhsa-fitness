@@ -1,0 +1,6 @@
+---
+vi:
+  admin:
+    courses:
+      create:
+        success: Tạo khoá học thành công

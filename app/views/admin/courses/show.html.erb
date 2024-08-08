@@ -1,0 +1,18 @@
+<%= render "layout" do %>
+<div class="mb-4 border-gray-200 dark:border-gray-700 flex justify-between">
+  <ul class="flex flex-wrap -mb-px text-sm font-medium text-center" id="default-tab" data-tabs-toggle="#default-tab-content" role="tablist">
+    <li class="me-2" role="presentation">
+      <button class="inline-block p-4 border-b-2 rounded-t-lg" id="course-tab" data-tabs-target="#course" type="button" role="tab" aria-controls="course" aria-selected="false">
+        Course Overview
+      </button>
+    </li>
+    <li class="me-2" role="presentation">
+      <button class="inline-block p-4 border-b-2 rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300" id="lessons-tab" data-tabs-target="#lessons" type="button" role="tab" aria-controls="lessons" aria-selected="false">lessons</button>
+    </li>
+  </ul>
+</div>
+<div id="default-tab-content">
+  <%= render "overview_tap", course: @course %>
+  <%= render "lesson_tab", course: @course %>
+</div>
+<% end %>

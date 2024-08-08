@@ -1,0 +1,38 @@
+<tr id="<%= dom_id(lesson) %>" class="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700">
+  <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+    <%= lesson.name %>
+  </th>
+  <td class="px-6 py-4">
+    <%= lesson.content.presence || "Content is empty" %>
+  </td>
+  <td class="px-6 py-4">
+    <%= link_to(
+          edit_admin_course_lesson_path(lesson.course, lesson),
+          class: "group space-x-1 w-fit block",
+          data: {
+            turbo_frame: "modal",
+            "tooltip-target": "edit-lesson-tooltip-#{dom_id(lesson)}",
+            "tooltip-placement": "top",
+          }
+        ) do %>
+      <svg width="50px"
+           height="50px"
+           class="h-6 w-6 group-hover:rotate-90 duration-300 stroke-zinc-400 fill-none group-active:stroke-zinc-200 group-active:fill-zinc-600"
+           id="_x32_" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512" xml:space="preserve" fill="#000000">
+        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+        <g id="SVGRepo_iconCarrier" fill="currentColor">
+          <g>
+            <path d="M331.736,165.752c-8.792-8.8-23.054-8.784-31.854,0l-13.571,13.587l46.367,46.359l13.578-13.57 c8.784-8.801,8.784-23.071,0-31.872L331.736,165.752z"></path>
+            <path d="M256,0C114.84,0,0,114.831,0,256C0,397.152,114.84,512,256,512c141.168,0,256-114.848,256-256 C512,114.831,397.168,0,256,0z M256,466.051c-115.998,0-210.051-94.053-210.051-210.051C45.949,140.002,140.002,45.94,256,45.94 c115.998,0,210.051,94.062,210.051,210.059C466.051,371.998,371.998,466.051,256,466.051z"></path>
+            <polygon points="159.164,306.485 159.164,352.845 205.531,352.845 311.352,247.022 264.993,200.664 "></polygon>
+          </g>
+        </g>
+      </svg>
+    <% end %>
+    <div id="<%= "edit-lesson-tooltip-#{dom_id(lesson)}" %>" role="tooltip" class="absolute z-10 invisible px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
+      Edit Lesson
+      <div class="tooltip-arrow" data-popper-arrow></div>
+    </div>
+  </td>
+</tr>
