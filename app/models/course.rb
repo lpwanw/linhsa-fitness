@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class Course < ApplicationRecord
+  include Course::Ransack
+
   belongs_to :creator, class_name: "User", optional: true, inverse_of: :courses
 
   enum status: {
