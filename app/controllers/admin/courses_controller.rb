@@ -3,6 +3,12 @@
 class Admin::CoursesController < Admin::BaseController
   before_action :load_course, only: %i[show edit update]
 
+  def index
+    @q = Course.ransack(params[:q])
+    scope = @q.result
+    @pagy, @courses = pagy(scope)
+  end
+
   def show; end
 
   def new
