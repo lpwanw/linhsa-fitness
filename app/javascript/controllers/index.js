@@ -10,6 +10,9 @@ application.register("dark", DarkController)
 import DrawerController from "./drawer_controller"
 application.register("drawer", DrawerController)
 
+import EditorjsController from "./editorjs_controller"
+application.register("editorjs", EditorjsController)
+
 import Flash__ComponentController from "./flash/component_controller"
 application.register("flash--component", Flash__ComponentController)
 

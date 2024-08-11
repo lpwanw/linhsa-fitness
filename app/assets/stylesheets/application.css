@@ -36,3 +36,17 @@
     /*    }*/
     /*}*/
 }
+
+.ce-toolbar__plus, .ce-toolbar__settings-btn {
+    @apply dark:text-white dark:bg-gray-700 dark:hover:bg-gray-600
+}
+
+.ce-block__content {
+  margin: unset;
+  @apply border-l-2 pl-2
+}
+
+.ce-toolbar__content {
+  margin: unset;
+  @apply border-l-2 pl-2
+}
