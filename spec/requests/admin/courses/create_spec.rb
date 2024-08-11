@@ -20,7 +20,7 @@ RSpec.describe Admin::CoursesController, type: :controller do
 
     before { sign_in current_user }
 
-    xcontext "when valid params" do
+    context "when valid params" do
       context "when it change ImportFile count" do
         it { expect { subject }.to change(Course, :count).by(1) }
       end
@@ -30,9 +30,9 @@ RSpec.describe Admin::CoursesController, type: :controller do
 
         before { subject }
 
-        it { expect(flash[:notice]).to eq(I18n.t("admin.import_guests.create.success")) }
+        it { expect(flash[:notice]).to eq("Tạo khoá học thành công") }
         it { expect(response).to have_http_status(:redirect) }
-        it { expect(response).to redirect_to(admin_import_guest_path(last_record)) }
+        it { expect(response).to redirect_to(admin_course_path(last_record)) }
         it { expect(last_record.name).to eq name }
       end
     end

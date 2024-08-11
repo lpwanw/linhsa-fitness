@@ -22,4 +22,18 @@ RSpec.describe Course, type: :model do
     it { is_expected.to validate_presence_of(:name) }
     it { is_expected.to validate_length_of(:name).is_at_most(255).is_at_least(3) }
   end
+
+  describe "ransack" do
+    describe ".ransackable_attributes" do
+      subject { described_class.ransackable_attributes }
+
+      it { is_expected.to eq %w[name] }
+    end
+
+    describe ".ransackable_associations" do
+      subject { described_class.ransackable_associations }
+
+      it { is_expected.to be_empty }
+    end
+  end
 end

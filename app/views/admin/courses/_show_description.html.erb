@@ -1,6 +1,5 @@
 <%= turbo_frame_tag :description do %>
-  <%# TODO: create representer %>
-  <p class="text-lg">
-    <%= link_to course.description.presence || "Click me to update description", edit_admin_course_path(course) %>
-  </p>
+  <%= link_to edit_admin_course_path(course) do %>
+    <%= render Editor::Component.new course.description %>
+  <% end %>
 <% end %>

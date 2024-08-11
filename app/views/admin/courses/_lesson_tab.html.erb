@@ -39,7 +39,7 @@
       </tr>
       </thead>
       <tbody class="divide-y-1" id="<%= dom_id(course) %>">
-        <%= render course.lessons %>
+        <%= render partial: "admin/courses/lesson", collection: course.lessons %>
       </tbody>
     </table>
   </div>
