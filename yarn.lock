@@ -14,6 +14,11 @@
   dependencies:
     regenerator-runtime "^0.14.0"
 
+"@editorjs/editorjs@^2.30.2":
+  version "2.30.2"
+  resolved "https://registry.yarnpkg.com/@editorjs/editorjs/-/editorjs-2.30.2.tgz#b045af18a9ebe0c02cb32be41b2a98e23ee08e59"
+  integrity sha512-JjtUDs2/aHTEjNZzEf/2cugpIli1+aNeU8mloOd5USbVxv2vC02HTMpv7Vc1UyB7dIuc45JaYSJwgnBZp9duhA==
+
 "@esbuild/aix-ppc64@0.21.5":
   version "0.21.5"
   resolved "https://registry.yarnpkg.com/@esbuild/aix-ppc64/-/aix-ppc64-0.21.5.tgz#c7184a326533fcdf1b8ee0733e21c713b975575f"
