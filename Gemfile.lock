@@ -534,6 +534,7 @@ DEPENDENCIES
   jbuilder
   letter_opener
   letter_opener_web
+  nokogiri
   pagy
   pg
   premailer-rails
