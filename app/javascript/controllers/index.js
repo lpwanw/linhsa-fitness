@@ -21,3 +21,6 @@ application.register("hello", HelloController)
 
 import ModalController from "./modal_controller"
 application.register("modal", ModalController)
+
+import PreviewVideoController from "./preview_video_controller"
+application.register("preview-video", PreviewVideoController)

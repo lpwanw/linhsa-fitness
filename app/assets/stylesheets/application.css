@@ -38,7 +38,7 @@
 }
 
 .ce-toolbar__plus, .ce-toolbar__settings-btn {
-    @apply dark:text-white dark:bg-gray-700 dark:hover:bg-gray-600
+  @apply dark:text-white dark:bg-gray-700 dark:hover:bg-gray-600
 }
 
 .ce-block__content {
@@ -49,4 +49,8 @@
 .ce-toolbar__content {
   margin: unset;
   @apply border-l-2 pl-2
+}
+
+.ce-inline-tool-input--showed {
+  @apply dark:text-gray-900
 }

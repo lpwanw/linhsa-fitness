@@ -7,4 +7,6 @@ class Lesson < ApplicationRecord
   validates :name, length: { minimum: 3, maximum: 255 }
 
   has_one_attached :video
+
+  validates :video, content_type: %w[video/mp4 video/mpeg video/webm video/ogg video/x-msvideo]
 end
