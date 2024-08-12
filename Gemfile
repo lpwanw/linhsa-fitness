@@ -5,6 +5,7 @@ source "https://rubygems.org"
 ruby "3.2.2"
 
 gem "active_model_serializers", "~> 0.10.0"
+gem "active_storage_validations"
 gem "bootsnap", require: false
 gem "cloudinary"
 gem "devise"
